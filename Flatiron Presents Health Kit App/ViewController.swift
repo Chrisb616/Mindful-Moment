@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import HealthKit
 class ViewController: UIViewController {
     
     var backgroundColor01 = UIColor.init(red: 143/255, green: 201/255, blue: 185/255, alpha: 1)
@@ -21,30 +21,61 @@ class ViewController: UIViewController {
     var backgroundColor09 = UIColor()
     var backgroundColor10 = UIColor()
     
+    
+    let healthStore = HKHealthStore()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        UIView.animateKeyframes(withDuration: 30, delay: 0, options: .calculationModeCubic, animations: {
-            UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 1/6, animations: {
-                self.view.backgroundColor = self.backgroundColor01
-            })
-            UIView.addKeyframe(withRelativeStartTime: 1/6, relativeDuration: 1/6, animations: {
-                self.view.backgroundColor = self.backgroundColor02
-            })
-            UIView.addKeyframe(withRelativeStartTime: 2/6, relativeDuration: 1/6, animations: {
-                self.view.backgroundColor = self.backgroundColor03
-            })
-            UIView.addKeyframe(withRelativeStartTime: 3/6, relativeDuration: 1/6, animations: {
-                self.view.backgroundColor = self.backgroundColor04
-            })
-            UIView.addKeyframe(withRelativeStartTime: 4/6, relativeDuration: 1/6, animations: {
-                self.view.backgroundColor = self.backgroundColor05
-            })
-            }, completion: nil)
+        let date = Date(timeIntervalSinceNow: 0)
+        let mintes: UInt = 10
+        print(date)
+        print(mintes)
         
+        
+        
+        saveMeditation(startDate: date, minutes: mintes)
+        
+        let typestoRead = Set([
+            HKObjectType.categoryType(forIdentifier: HKCategoryTypeIdentifier.mindfulSession)!
+            ])
+        
+        let typestoShare = Set([
+            HKObjectType.categoryType(forIdentifier: HKCategoryTypeIdentifier.mindfulSession)!
+            ])
+        
+        self.healthStore.requestAuthorization(toShare: typestoShare, read: typestoRead) { (success, error) -> Void in
+            if success == false {
+                print(" Display not allowed")
+            }
+        }
     }
     
-
+    
+    
+    
+    func saveMeditation(startDate:Date, minutes:UInt) {
+        let mindfulType = HKCategoryType.categoryType(forIdentifier: .mindfulSession)
+        let mindfulSample = HKCategorySample(type: mindfulType!, value: 0, start: Date.init(timeIntervalSinceNow: -(10*60)), end: Date())
+        healthStore.save(mindfulSample) { success, error in
+            if(error != nil) {
+                abort()
+            }else{
+                print("Meditation saved!")
+            }
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
 
 }
 
+    
+    
+    
