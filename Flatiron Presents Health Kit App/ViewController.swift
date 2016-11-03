@@ -27,14 +27,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let date = Date(timeIntervalSinceNow: 0)
-        let mintes: UInt = 10
+        let date = Date()
+        let mintes: UInt = 15
         print(date)
         print(mintes)
         
         
         
-        saveMeditation(startDate: date, minutes: mintes)
         
         let typestoRead = Set([
             HKObjectType.categoryType(forIdentifier: HKCategoryTypeIdentifier.mindfulSession)!
@@ -45,34 +44,35 @@ class ViewController: UIViewController {
             ])
         
         self.healthStore.requestAuthorization(toShare: typestoShare, read: typestoRead) { (success, error) -> Void in
-            if success == false {
-                print(" Display not allowed")
+            if success {
+                print("Health Kit Authorized")
+            } else {
+                print("Health Kit Authorization Denied")
+                if error != nil {
+                    print("\(error.debugDescription)")
+                }
             }
         }
+        
+        sleep(60)
+        saveMeditation(seconds: date.timeIntervalSinceNow)
     }
     
     
     
     
-    func saveMeditation(startDate:Date, minutes:UInt) {
+    func saveMeditation(seconds: TimeInterval) {
         let mindfulType = HKCategoryType.categoryType(forIdentifier: .mindfulSession)
-        let mindfulSample = HKCategorySample(type: mindfulType!, value: 0, start: Date.init(timeIntervalSinceNow: -(10*60)), end: Date())
+        let mindfulSample = HKCategorySample(type: mindfulType!, value: 0, start: Date.init(timeIntervalSinceNow: seconds ), end: Date())
         healthStore.save(mindfulSample) { success, error in
             if(error != nil) {
+                print(error.debugDescription)
                 abort()
             }else{
                 print("Meditation saved!")
             }
         }
     }
-    
-    
-    
-    
-    
-    
-    
-    
 
 }
 
