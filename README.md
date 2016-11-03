@@ -1,5 +1,5 @@
 # Flatiron-Presents-HealthKit-App
-By Missy All
+By Missy Allan and Christopher Boynton
 ##Basic Features
 
 1. Landing screen
