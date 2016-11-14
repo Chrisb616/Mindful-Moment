@@ -13,3 +13,8 @@ extension UIColor {
     static let purpleMountain = UIColor.init(red: 113/255, green: 81/255, blue: 130/255, alpha: 1)
     static let greenYellow = UIColor.init(red: 210/255, green: 219/255, blue: 183/255, alpha: 1)
 }
+
+extension UIFont {
+    static let timerLabelFont = UIFont(name: "AvenirNext-Medium", size: 50)
+    static let smallTextFont = UIFont(name: "AvenirNext-Heavy", size: 18)
+}
