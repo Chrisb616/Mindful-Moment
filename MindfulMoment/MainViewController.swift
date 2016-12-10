@@ -36,13 +36,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var mountain3: UIImageView!
     @IBOutlet weak var openingMoon: UIImageView!
     
+    let gradient = CAGradientLayer()
+    
     var sessions = [Session]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setUpGradient()
         setUpViews()
-        moveMountain()
+        openingAnimation()
         
         let queue = OperationQueue()
         
@@ -55,13 +58,28 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         self.view.layoutIfNeeded()
         
         store.getMeditationsFromHeath {}
+        
+        
+    }
+    
+    func setUpGradient() {
+        let color1 = UIColor.themeTeal.cgColor
+        let color2 = UIColor.themeTealAccent1.cgColor
+        let color3 = UIColor.themeTeal.cgColor
+        
+        self.gradient.colors = [color1, color2, color3]
+        self.gradient.locations = [0, 0.5, 1]
+        self.gradient.startPoint = CGPoint(x: 0, y: 0)
+        self.gradient.endPoint = CGPoint(x: 1, y: 1)
+        self.gradient.frame = self.view.frame
+        self.view.layer.insertSublayer(gradient, at: 0)
     }
     
     
     func setUpViews() {
         print(startButton.allTargets)
         startButton.layer.cornerRadius = 10
-        startButton.layer.borderColor = UIColor.purpleMountain.cgColor
+        startButton.layer.borderColor = UIColor.themePurple.cgColor
         startButton.layer.borderWidth = 3
         startButton.layer.shadowColor = UIColor.black.cgColor
         startButton.layer.shadowOpacity = 1
@@ -74,7 +92,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         self.view.addSubview(timerLabel)
         timerLabel.text = "00:00"
         timerLabel.textAlignment = .center
-        timerLabel.textColor = UIColor.greenYellow
+        timerLabel.textColor = UIColor.themeYellow
         timerLabel.font = UIFont.timerLabelFont
         timerLabel.frame = CGRect(x: 0, y: self.view.frame.midY * 1.25, width: self.view.frame.width, height: self.view.frame.height * 0.2)
         timerLabel.alpha = 0
@@ -82,13 +100,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         self.view.addSubview(meditationSavedLabel)
         meditationSavedLabel.text = "Session Saved"
         meditationSavedLabel.textAlignment = .center
-        meditationSavedLabel.textColor = UIColor.greenYellow
+        meditationSavedLabel.textColor = UIColor.themeYellow
         meditationSavedLabel.font = UIFont.smallTextFont
         meditationSavedLabel.frame = CGRect(x: 0, y: self.view.frame.midY * 1.35, width: self.view.frame.width, height: self.view.frame.height * 0.2)
         meditationSavedLabel.alpha = 0
         
         pastButton.layer.cornerRadius = 10
-        pastButton.layer.borderColor = UIColor.purpleMountain.cgColor
+        pastButton.layer.borderColor = UIColor.themePurple.cgColor
         pastButton.layer.borderWidth = 3
         pastButton.layer.shadowColor = UIColor.black.cgColor
         pastButton.layer.shadowOpacity = 1
@@ -97,7 +115,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         pastButton.addTarget(self, action: #selector(pastButtonTapped), for: .touchUpInside)
     }
     
-    func moveMountain(){
+    func openingAnimation(){
         UIView.animate(withDuration: 5) {
             self.mountain.transform = CGAffineTransform(translationX: 0, y: 150)
             self.mountain2.transform = CGAffineTransform(translationX: 0, y: 200)
@@ -189,22 +207,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         return cell
     }
-}
-
-extension Int {
-    var convertedToTime: String {
-        let seconds = self % 60
-        let minutes = (self - seconds)/60
-        
-        return "\(minutes.forceTwoDigits):\(seconds.forceTwoDigits)"
-    }
-    var forceTwoDigits: String {
-        if self < 10 {
-            return "0\(self)"
-        } else {
-            return "\(self)"
-        }
-    }
+    
 }
 
     

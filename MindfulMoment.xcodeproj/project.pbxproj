@@ -19,6 +19,7 @@
 		1B10171F1DFC387F00D4AA44 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1017181DFC387F00D4AA44 /* UIColor.swift */; };
 		1B1017201DFC387F00D4AA44 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1017191DFC387F00D4AA44 /* UIFont.swift */; };
 		1B1017241DFC3AC200D4AA44 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B1017231DFC3AC200D4AA44 /* HealthKit.framework */; };
+		1B1017291DFC4A2000D4AA44 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1017281DFC4A2000D4AA44 /* Int.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		1B1017191DFC387F00D4AA44 /* UIFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		1B1017211DFC3AC200D4AA44 /* MindfulMoment.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MindfulMoment.entitlements; sourceTree = "<group>"; };
 		1B1017231DFC3AC200D4AA44 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		1B1017281DFC4A2000D4AA44 /* Int.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,13 +74,9 @@
 			isa = PBXGroup;
 			children = (
 				1B1017211DFC3AC200D4AA44 /* MindfulMoment.entitlements */,
-				1B1017131DFC387F00D4AA44 /* DataStore.swift */,
-				1B1017141DFC387F00D4AA44 /* Health.swift */,
-				1B1017151DFC387F00D4AA44 /* MainViewController.swift */,
-				1B1017161DFC387F00D4AA44 /* Session.swift */,
-				1B1017171DFC387F00D4AA44 /* SessionsViewController.swift */,
-				1B1017181DFC387F00D4AA44 /* UIColor.swift */,
-				1B1017191DFC387F00D4AA44 /* UIFont.swift */,
+				1B1017271DFC49AA00D4AA44 /* Models */,
+				1B1017251DFC498B00D4AA44 /* ViewControllers */,
+				1B1017261DFC499400D4AA44 /* Extensions */,
 				1B1017011DFC37EA00D4AA44 /* AppDelegate.swift */,
 				1B1017051DFC37EA00D4AA44 /* Main.storyboard */,
 				1B1017081DFC37EA00D4AA44 /* Assets.xcassets */,
@@ -94,6 +92,35 @@
 				1B1017231DFC3AC200D4AA44 /* HealthKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1B1017251DFC498B00D4AA44 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				1B1017151DFC387F00D4AA44 /* MainViewController.swift */,
+				1B1017171DFC387F00D4AA44 /* SessionsViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		1B1017261DFC499400D4AA44 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1B1017181DFC387F00D4AA44 /* UIColor.swift */,
+				1B1017191DFC387F00D4AA44 /* UIFont.swift */,
+				1B1017281DFC4A2000D4AA44 /* Int.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		1B1017271DFC49AA00D4AA44 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1B1017131DFC387F00D4AA44 /* DataStore.swift */,
+				1B1017161DFC387F00D4AA44 /* Session.swift */,
+				1B1017141DFC387F00D4AA44 /* Health.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,6 +207,7 @@
 				1B10171A1DFC387F00D4AA44 /* DataStore.swift in Sources */,
 				1B10171F1DFC387F00D4AA44 /* UIColor.swift in Sources */,
 				1B1017021DFC37EA00D4AA44 /* AppDelegate.swift in Sources */,
+				1B1017291DFC4A2000D4AA44 /* Int.swift in Sources */,
 				1B10171C1DFC387F00D4AA44 /* MainViewController.swift in Sources */,
 				1B1017201DFC387F00D4AA44 /* UIFont.swift in Sources */,
 			);
