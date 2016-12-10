@@ -7,10 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1B0D02B71DD4CB7B006083EB /* HealthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0D02B61DD4CB7B006083EB /* HealthStore.swift */; };
-		1B0D02B91DD4CC43006083EB /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0D02B81DD4CC43006083EB /* Theme.swift */; };
+		1B0D02B71DD4CB7B006083EB /* Health.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0D02B61DD4CB7B006083EB /* Health.swift */; };
+		1B0D02B91DD4CC43006083EB /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0D02B81DD4CC43006083EB /* UIFont.swift */; };
+		1B1016F41DFC364200D4AA44 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1016F31DFC364200D4AA44 /* UIColor.swift */; };
+		1B1096791DDAAF4000609104 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1096781DDAAF4000609104 /* Session.swift */; };
+		1B4517601DDB7F0A0060292D /* SessionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B45175F1DDB7F0A0060292D /* SessionsViewController.swift */; };
+		1B4517621DDB87F30060292D /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4517611DDB87F30060292D /* DataStore.swift */; };
 		1BF652281DBE423800CF76C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF652271DBE423800CF76C8 /* AppDelegate.swift */; };
-		1BF6522A1DBE423800CF76C8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF652291DBE423800CF76C8 /* ViewController.swift */; };
+		1BF6522A1DBE423800CF76C8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF652291DBE423800CF76C8 /* MainViewController.swift */; };
 		1BF6522D1DBE423800CF76C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BF6522B1DBE423800CF76C8 /* Main.storyboard */; };
 		1BF6522F1DBE423800CF76C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BF6522E1DBE423800CF76C8 /* Assets.xcassets */; };
 		1BF652321DBE423800CF76C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BF652301DBE423800CF76C8 /* LaunchScreen.storyboard */; };
@@ -18,11 +22,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1B0D02B61DD4CB7B006083EB /* HealthStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthStore.swift; sourceTree = "<group>"; };
-		1B0D02B81DD4CC43006083EB /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		1B0D02B61DD4CB7B006083EB /* Health.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Health.swift; sourceTree = "<group>"; };
+		1B0D02B81DD4CC43006083EB /* UIFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
+		1B1016F31DFC364200D4AA44 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		1B1096781DDAAF4000609104 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		1B45175F1DDB7F0A0060292D /* SessionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionsViewController.swift; sourceTree = "<group>"; };
+		1B4517611DDB87F30060292D /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		1BF652241DBE423800CF76C8 /* Flatiron Presents Health Kit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Flatiron Presents Health Kit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BF652271DBE423800CF76C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1BF652291DBE423800CF76C8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1BF652291DBE423800CF76C8 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		1BF6522C1DBE423800CF76C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1BF6522E1DBE423800CF76C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1BF652311DBE423800CF76C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -43,6 +51,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B1016F11DFC356700D4AA44 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				1BF652291DBE423800CF76C8 /* MainViewController.swift */,
+				1B45175F1DDB7F0A0060292D /* SessionsViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		1B1016F21DFC363100D4AA44 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1B0D02B81DD4CC43006083EB /* UIFont.swift */,
+				1B1016F31DFC364200D4AA44 /* UIColor.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		1BF6521B1DBE423700CF76C8 = {
 			isa = PBXGroup;
 			children = (
@@ -65,13 +91,15 @@
 			children = (
 				F634A7E51DCA93AD00498AA4 /* Flatiron Presents Health Kit App.entitlements */,
 				1BF652271DBE423800CF76C8 /* AppDelegate.swift */,
-				1BF652291DBE423800CF76C8 /* ViewController.swift */,
-				1B0D02B81DD4CC43006083EB /* Theme.swift */,
-				1B0D02B61DD4CB7B006083EB /* HealthStore.swift */,
+				1B1016F11DFC356700D4AA44 /* ViewControllers */,
+				1B1016F21DFC363100D4AA44 /* Extensions */,
+				1B0D02B61DD4CB7B006083EB /* Health.swift */,
 				1BF6522B1DBE423800CF76C8 /* Main.storyboard */,
 				1BF6522E1DBE423800CF76C8 /* Assets.xcassets */,
 				1BF652301DBE423800CF76C8 /* LaunchScreen.storyboard */,
 				1BF652331DBE423800CF76C8 /* Info.plist */,
+				1B1096781DDAAF4000609104 /* Session.swift */,
+				1B4517611DDB87F30060292D /* DataStore.swift */,
 			);
 			path = "Flatiron Presents Health Kit App";
 			sourceTree = "<group>";
@@ -111,7 +139,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Flatiron School";
 				TargetAttributes = {
 					1BF652231DBE423700CF76C8 = {
@@ -162,9 +190,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1BF6522A1DBE423800CF76C8 /* ViewController.swift in Sources */,
-				1B0D02B91DD4CC43006083EB /* Theme.swift in Sources */,
-				1B0D02B71DD4CB7B006083EB /* HealthStore.swift in Sources */,
+				1B4517621DDB87F30060292D /* DataStore.swift in Sources */,
+				1BF6522A1DBE423800CF76C8 /* MainViewController.swift in Sources */,
+				1B4517601DDB7F0A0060292D /* SessionsViewController.swift in Sources */,
+				1B0D02B91DD4CC43006083EB /* UIFont.swift in Sources */,
+				1B1096791DDAAF4000609104 /* Session.swift in Sources */,
+				1B1016F41DFC364200D4AA44 /* UIColor.swift in Sources */,
+				1B0D02B71DD4CB7B006083EB /* Health.swift in Sources */,
 				1BF652281DBE423800CF76C8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -209,6 +241,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -259,6 +292,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;

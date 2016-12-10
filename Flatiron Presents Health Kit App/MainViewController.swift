@@ -8,13 +8,17 @@
 
 import UIKit
 import HealthKit
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    let healthStore = HealthStore.healthStore
+    let healthStore = HealthManager.healthStore
+    let store = DataStore.sharedInstance
     
     @IBOutlet weak var startLabel: UILabel!
     @IBOutlet weak var startButton: UIButton!
     let startButtonTapGesture = UIGestureRecognizer()
+    
+    @IBOutlet weak var pastButton: UIButton!
+    @IBOutlet weak var pastMindfulnessSessionLabel: UILabel!
     
     let timerLabel = UILabel()
     let meditationSavedLabel = UILabel()
@@ -27,28 +31,30 @@ class ViewController: UIViewController {
     var startTime = Date()
     var endTime = Date()
     
+    @IBOutlet weak var mountain: UIImageView!
+    @IBOutlet weak var mountain2: UIImageView!
+    @IBOutlet weak var mountain3: UIImageView!
+    @IBOutlet weak var openingMoon: UIImageView!
+    
+    var sessions = [Session]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setUpViews()
+        moveMountain()
         
         let queue = OperationQueue()
         
         queue.addOperation {
-            HealthStore.setUpHealthStore()
+            HealthManager.setUpHealthStore()
         }
-        
         
         print("View Did load")
         
-        
-        
         self.view.layoutIfNeeded()
         
-        
-        //let date = Date()
-        //saveMeditation(seconds: date.timeIntervalSinceNow)
+        store.getMeditationsFromHeath {}
     }
     
     
@@ -63,7 +69,6 @@ class ViewController: UIViewController {
         startButton.addTarget(self, action: #selector(startButtonTapped), for: .touchUpInside)
         print(startButton.allTargets)
         startButton.addSubview(startLabel)
-        //startButton.layer.shadowRadius = 5
         
         
         self.view.addSubview(timerLabel)
@@ -82,6 +87,23 @@ class ViewController: UIViewController {
         meditationSavedLabel.frame = CGRect(x: 0, y: self.view.frame.midY * 1.35, width: self.view.frame.width, height: self.view.frame.height * 0.2)
         meditationSavedLabel.alpha = 0
         
+        pastButton.layer.cornerRadius = 10
+        pastButton.layer.borderColor = UIColor.purpleMountain.cgColor
+        pastButton.layer.borderWidth = 3
+        pastButton.layer.shadowColor = UIColor.black.cgColor
+        pastButton.layer.shadowOpacity = 1
+        pastButton.layer.shadowOffset = CGSize(width: 2, height: 5)
+        pastButton.addSubview(pastMindfulnessSessionLabel)
+        pastButton.addTarget(self, action: #selector(pastButtonTapped), for: .touchUpInside)
+    }
+    
+    func moveMountain(){
+        UIView.animate(withDuration: 5) {
+            self.mountain.transform = CGAffineTransform(translationX: 0, y: 150)
+            self.mountain2.transform = CGAffineTransform(translationX: 0, y: 200)
+            self.mountain3.transform = CGAffineTransform(translationX: 0, y: 200)
+            self.openingMoon.transform = CGAffineTransform(translationX: 0, y: -20)
+        }
     }
     
     func startButtonTapped(_ sender: UIButton) {
@@ -94,12 +116,13 @@ class ViewController: UIViewController {
             
             UIView.animate(withDuration: 0.5, animations: {
                 sender.transform = CGAffineTransform(scaleX: 1, y: 1)
+                self.pastButton.alpha = 1
                 self.view.layoutIfNeeded()
             })
             
             
             endTimer()
-            saveMeditation(start: startTime, end: endTime)
+            HealthManager.saveMeditation(start: startTime, end: endTime)
             
         } else {
             print("Start Button Tapped")
@@ -108,12 +131,14 @@ class ViewController: UIViewController {
             
             UIView.animate(withDuration: 0.5, animations: {
                 sender.transform = CGAffineTransform(scaleX: 1, y: 1)
+                self.pastButton.alpha = 0
                 self.view.layoutIfNeeded()
             })
             
             countIsActive = true
             startTimer()
         }
+        
     }
     
     func startTimer() {
@@ -150,20 +175,20 @@ class ViewController: UIViewController {
         secondsInTime += 1
         timerLabel.text = secondsInTime.convertedToTime
     }
-    
-    func saveMeditation(start: Date, end: Date) {
-        let mindfulType = HKCategoryType.categoryType(forIdentifier: .mindfulSession)
-        let mindfulSample = HKCategorySample(type: mindfulType!, value: 0, start: start, end: end)
-        healthStore.save(mindfulSample) { success, error in
-            if(error != nil) {
-                print(error.debugDescription)
-                abort()
-            }else{
-                print("Meditation saved!")
-            }
-        }
+    func pastButtonTapped() {
+        print("Past Button Tapped")
     }
-
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return sessions.count
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "sessionCell", for: indexPath)
+        
+        return cell
+    }
 }
 
 extension Int {
