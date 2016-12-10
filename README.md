@@ -1,20 +1,7 @@
-# Flatiron-Presents-HealthKit-App
-By Missy Allan and Christopher Boynton
-##Basic Features
+# Mindful Moment
+###Developers: [Christopher Boynton](https://github.com/Chrisb616/) and [Missy Allan](https://github.com/missyalienn)
+Both Christopher and Missy were students in [the Flatiron School](https://flatironschool.com) at the time of this project.
 
-1. Landing screen
-2. Picker view to select duration
-3. Start button
-4. Stop button
-5. Write to health app
-6. Read from health app
-7. Organize past sessions in a Table View
-8. Music
-9. Alarm
+##Health Kit
+Mindful Moment is a simple meditation app, created as a demonstration of the use of Health Kit for Flatiron Students Presents, a weekly series of development talks by Flatiron School Students. For more information on Health Kit, including info on how to get your app integrated with Apple's Health, the presentation slides are [avaiable here](https://docs.google.com/presentation/d/1N7ekvOtYxGC_Mp4iJeDlcQjJEqVnuwZy-NSnfsi5ejs/edit?usp=sharing).
 
-##Reach Features 
-
-1. Pause Button
-2. Music Selection
-3. Connection to 'Music' or 'Spotify'
-4. Themes
