@@ -11,4 +11,5 @@ import UIKit
 extension UIFont {
     static let timerLabelFont = UIFont(name: "AvenirNext-Medium", size: 50)
     static let smallTextFont = UIFont(name: "AvenirNext-Heavy", size: 18)
+    
 }

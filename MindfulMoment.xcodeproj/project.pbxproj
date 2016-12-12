@@ -20,6 +20,12 @@
 		1B1017201DFC387F00D4AA44 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1017191DFC387F00D4AA44 /* UIFont.swift */; };
 		1B1017241DFC3AC200D4AA44 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B1017231DFC3AC200D4AA44 /* HealthKit.framework */; };
 		1B1017291DFC4A2000D4AA44 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1017281DFC4A2000D4AA44 /* Int.swift */; };
+		1B10172B1DFC73E600D4AA44 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B10172A1DFC73E600D4AA44 /* Double.swift */; };
+		1B10172D1DFC74C500D4AA44 /* CGAffineTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B10172C1DFC74C500D4AA44 /* CGAffineTransform.swift */; };
+		1B2411921DFF0098009767CF /* SunView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2411911DFF0098009767CF /* SunView.swift */; };
+		1B2411951DFF01BC009767CF /* UIImageConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2411941DFF01BC009767CF /* UIImageConstants.swift */; };
+		1B2411971DFF0276009767CF /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2411961DFF0276009767CF /* UIView.swift */; };
+		1B2411991DFF40E9009767CF /* MoonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2411981DFF40E9009767CF /* MoonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +45,12 @@
 		1B1017211DFC3AC200D4AA44 /* MindfulMoment.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MindfulMoment.entitlements; sourceTree = "<group>"; };
 		1B1017231DFC3AC200D4AA44 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		1B1017281DFC4A2000D4AA44 /* Int.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
+		1B10172A1DFC73E600D4AA44 /* Double.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
+		1B10172C1DFC74C500D4AA44 /* CGAffineTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGAffineTransform.swift; sourceTree = "<group>"; };
+		1B2411911DFF0098009767CF /* SunView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SunView.swift; sourceTree = "<group>"; };
+		1B2411941DFF01BC009767CF /* UIImageConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageConstants.swift; sourceTree = "<group>"; };
+		1B2411961DFF0276009767CF /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		1B2411981DFF40E9009767CF /* MoonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +85,7 @@
 		1B1017001DFC37EA00D4AA44 /* MindfulMoment */ = {
 			isa = PBXGroup;
 			children = (
+				1B2411931DFF01AF009767CF /* Constants */,
 				1B1017211DFC3AC200D4AA44 /* MindfulMoment.entitlements */,
 				1B1017271DFC49AA00D4AA44 /* Models */,
 				1B1017251DFC498B00D4AA44 /* ViewControllers */,
@@ -99,6 +112,8 @@
 			children = (
 				1B1017151DFC387F00D4AA44 /* MainViewController.swift */,
 				1B1017171DFC387F00D4AA44 /* SessionsViewController.swift */,
+				1B2411911DFF0098009767CF /* SunView.swift */,
+				1B2411981DFF40E9009767CF /* MoonView.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -109,6 +124,9 @@
 				1B1017181DFC387F00D4AA44 /* UIColor.swift */,
 				1B1017191DFC387F00D4AA44 /* UIFont.swift */,
 				1B1017281DFC4A2000D4AA44 /* Int.swift */,
+				1B10172A1DFC73E600D4AA44 /* Double.swift */,
+				1B10172C1DFC74C500D4AA44 /* CGAffineTransform.swift */,
+				1B2411961DFF0276009767CF /* UIView.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -121,6 +139,14 @@
 				1B1017141DFC387F00D4AA44 /* Health.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		1B2411931DFF01AF009767CF /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				1B2411941DFF01BC009767CF /* UIImageConstants.swift */,
+			);
+			name = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,13 +228,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B10171B1DFC387F00D4AA44 /* Health.swift in Sources */,
+				1B2411921DFF0098009767CF /* SunView.swift in Sources */,
 				1B10171D1DFC387F00D4AA44 /* Session.swift in Sources */,
+				1B2411991DFF40E9009767CF /* MoonView.swift in Sources */,
 				1B10171E1DFC387F00D4AA44 /* SessionsViewController.swift in Sources */,
 				1B10171A1DFC387F00D4AA44 /* DataStore.swift in Sources */,
 				1B10171F1DFC387F00D4AA44 /* UIColor.swift in Sources */,
 				1B1017021DFC37EA00D4AA44 /* AppDelegate.swift in Sources */,
+				1B10172D1DFC74C500D4AA44 /* CGAffineTransform.swift in Sources */,
 				1B1017291DFC4A2000D4AA44 /* Int.swift in Sources */,
+				1B2411951DFF01BC009767CF /* UIImageConstants.swift in Sources */,
+				1B2411971DFF0276009767CF /* UIView.swift in Sources */,
 				1B10171C1DFC387F00D4AA44 /* MainViewController.swift in Sources */,
+				1B10172B1DFC73E600D4AA44 /* Double.swift in Sources */,
 				1B1017201DFC387F00D4AA44 /* UIFont.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

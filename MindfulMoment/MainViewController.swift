@@ -31,19 +31,22 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     var startTime = Date()
     var endTime = Date()
     
+    var sun = SunView()
+    var moon = MoonView()
+    
     @IBOutlet weak var mountain: UIImageView!
     @IBOutlet weak var mountain2: UIImageView!
     @IBOutlet weak var mountain3: UIImageView!
     @IBOutlet weak var openingMoon: UIImageView!
+    @IBOutlet weak var openingSun: UIImageView!
+    @IBOutlet weak var openingSunRays: UIImageView!
     
-    let gradient = CAGradientLayer()
     
     var sessions = [Session]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setUpGradient()
         setUpViews()
         openingAnimation()
         
@@ -59,22 +62,20 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         store.getMeditationsFromHeath {}
         
-        
     }
-    
-    func setUpGradient() {
-        let color1 = UIColor.themeTeal.cgColor
-        let color2 = UIColor.themeTealAccent1.cgColor
-        let color3 = UIColor.themeTeal.cgColor
-        
-        self.gradient.colors = [color1, color2, color3]
-        self.gradient.locations = [0, 0.5, 1]
-        self.gradient.startPoint = CGPoint(x: 0, y: 0)
-        self.gradient.endPoint = CGPoint(x: 1, y: 1)
-        self.gradient.frame = self.view.frame
-        self.view.layer.insertSublayer(gradient, at: 0)
-    }
-    
+//    
+//    func setUpGradient() {
+//        let skyGradient = CAGradientLayer()
+//        let bright = UIColor.themeTealAccent1.cgColor
+//        let dark = UIColor.themeTeal.cgColor
+//        
+//        skyGradient.colors = [bright,dark]
+//        skyGradient.locations = [0, 1]
+//        skyGradient.startPoint = CGPoint(x: 0, y: 0)
+//        skyGradient.endPoint = CGPoint(x: 1, y: 0.5)
+//        skyGradient.frame = self.view.frame
+//        self.view.layer.insertSublayer(skyGradient, at: 0)
+//    }
     
     func setUpViews() {
         print(startButton.allTargets)
@@ -116,12 +117,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func openingAnimation(){
+        openingSun.addSubview(openingSunRays)
+        
         UIView.animate(withDuration: 5) {
             self.mountain.transform = CGAffineTransform(translationX: 0, y: 150)
             self.mountain2.transform = CGAffineTransform(translationX: 0, y: 200)
             self.mountain3.transform = CGAffineTransform(translationX: 0, y: 200)
-            self.openingMoon.transform = CGAffineTransform(translationX: 0, y: -20)
+            self.openingMoon.transform = CGAffineTransform(translationX: 50, y: -180)
+            self.openingSun.transform = CGAffineTransform(translationX: -50, y: -180)
+            self.openingSunRays.transform = CGAffineTransform(rotationDegrees: 70)
         }
+
     }
     
     func startButtonTapped(_ sender: UIButton) {
@@ -175,6 +181,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 self.timerLabel.alpha = 0
             })
         })
+        
+        self.view.addSubview(sun)
+        self.view.addSubview(moon)
+        
     }
     func endTimer() {
         timer.invalidate()
@@ -190,8 +200,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         })
     }
     func updateTime(_ sender: Timer) {
+        if secondsInTime % 40 == 0 {
+            animateSun()
+        }
+        if secondsInTime % 40 == 20 {
+            animateMoon()
+        }
         secondsInTime += 1
         timerLabel.text = secondsInTime.convertedToTime
+        
     }
     func pastButtonTapped() {
         print("Past Button Tapped")
@@ -208,6 +225,45 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return cell
     }
     
+    func animateSun() {
+        sun.animateRays()
+        
+        sun.frame = CGRect(x: self.view.frame.width, y: self.view.frame.height, width: self.view.frame.width * 0.4, height: self.view.frame.width * 0.4)
+        
+        let sunPath = UIBezierPath()
+        sunPath.move(to: CGPoint(x: self.view.frame.width * 2, y: self.view.frame.height))
+        sunPath.addQuadCurve(to: CGPoint(x: self.view.frame.width * -1, y: self.view.frame.height) , controlPoint: CGPoint(x: self.view.frame.width/2, y: self.view.frame.height * -0.75))
+        
+        
+        let sunArcAnimation = CAKeyframeAnimation(keyPath: "position")
+        sunArcAnimation.path = sunPath.cgPath
+        sunArcAnimation.repeatCount = 0
+        sunArcAnimation.duration = 20.0
+        
+        sun.layer.add(sunArcAnimation, forKey: "position")
+        
+    }
+    
+    func animateMoon() {
+        print("Moon triggered")
+        
+        
+        moon.frame = CGRect(x: self.view.frame.width * -0.4, y: self.view.frame.height, width: self.view.frame.width * 0.4, height: self.view.frame.width * 0.4)
+        
+        
+        
+        let moonPath = UIBezierPath()
+        moonPath.move(to: CGPoint(x: self.view.frame.width * 2, y: self.view.frame.height))
+        moonPath.addQuadCurve(to: CGPoint(x: self.view.frame.width * -1, y: self.view.frame.height) , controlPoint: CGPoint(x: self.view.frame.width/2, y: self.view.frame.height * -0.75))
+        
+        
+        let moonArcAnimation = CAKeyframeAnimation(keyPath: "position")
+        moonArcAnimation.path = moonPath.cgPath
+        moonArcAnimation.repeatCount = 0
+        moonArcAnimation.duration = 20.0
+        
+        moon.layer.add(moonArcAnimation, forKey: "position")
+    }
 }
 
     
