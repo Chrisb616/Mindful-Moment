@@ -17,4 +17,8 @@ extension UIColor {
     static let themeTealAccent1 = UIColor.init(red: 180/255, green: 210/255, blue: 170/255, alpha: 1)
     static let themePurple = UIColor.init(red: 113/255, green: 81/255, blue: 130/255, alpha: 1)
     static let themeYellow = UIColor.init(red: 210/255, green: 219/255, blue: 183/255, alpha: 1)
+    
+    static let nightOcean = UIColor.init(red: 102/255, green: 102/255, blue: 255/255, alpha: 1)
+    static let dayOcean = UIColor.init(red: 142/255, green: 142/255, blue: 255/255, alpha: 1)
+    static let sunGlare = UIColor.init(red: 202/255, green: 202/255, blue: 255/255, alpha: 1)
 }

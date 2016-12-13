@@ -31,6 +31,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     var startTime = Date()
     var endTime = Date()
     
+    @IBOutlet weak var ocean: UIView!
     @IBOutlet weak var mountain: UIImageView!
     @IBOutlet weak var mountain2: UIImageView!
     @IBOutlet weak var mountain3: UIImageView!
@@ -49,8 +50,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         
         
         self.view.addSubview(constellationTL)
@@ -93,12 +92,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         self.view.layoutIfNeeded()
         
         store.getMeditationsFromHeath {}
-        setUpGradient()
+        setUpGradients()
         
     }
     let skyGradient = CAGradientLayer()
+    let oceanGradient = CAGradientLayer()
     
-    func setUpGradient() {
+    func setUpGradients() {
         
         let bright = UIColor.themeTealAccent1.cgColor
         let dark = UIColor.nightTeal.cgColor
@@ -111,20 +111,46 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         self.view.layer.insertSublayer(skyGradient, at: 0)
         skyGradient.bounds = self.view.bounds
         
+        let sunGlareOcean = UIColor.sunGlare.cgColor
+        let dayOcean = UIColor.dayOcean.cgColor
+        let nightOcean = UIColor.nightOcean.cgColor
+        
+        oceanGradient.colors = [nightOcean, nightOcean, dayOcean, sunGlareOcean, sunGlareOcean, sunGlareOcean, dayOcean, nightOcean, nightOcean]
+        oceanGradient.locations = [0,1,1,1,1,1,1,1,1]
+        oceanGradient.startPoint = CGPoint(x: -1, y: 0)
+        oceanGradient.endPoint = CGPoint(x: 2, y: 0)
+        oceanGradient.frame = self.view.frame
+        self.ocean.layer.insertSublayer(oceanGradient, at: 0)
+        oceanGradient.bounds = self.view.bounds
     }
-    func animateGradient() {
+    func animateSkyGradient() {
         let skyAnimation = CAKeyframeAnimation(keyPath: "locations")
         
-        let startKeyframe = [0,1,2,2,2,2,2]
-        let dawnKeyframe = [0,0.5,1,1,1,2,2]
-        let noonKeyframe = [0,-1,0,0.5,1,2,2]
-        let duskKeyframe = [0,-1,0,0,0,0.5,1]
-        let endKeyframe = [0,-1,-1,-1,-1,0,0]
+        let startKeyframe = [0,1,1,1,1,1,1]
+        let dawnKeyframe = [0,0.5,1,1,1,1,1]
+        let noonKeyframe = [0,0,0,0.5,1,1,1]
+        let duskKeyframe = [0,0,0,0,0,0.5,1]
+        let endKeyframe = [0,0,0,0,0,0,1]
         
         skyAnimation.values = [startKeyframe,dawnKeyframe,noonKeyframe,duskKeyframe,endKeyframe]
         skyAnimation.keyTimes = [0,0.1,0.5,0.9,1]
         skyAnimation.duration = 30
         skyGradient.add(skyAnimation, forKey: "locations")
+    }
+    func animateOceanGradient() {
+        print("Ocean animating")
+        let oceanAnimation = CAKeyframeAnimation(keyPath: "locations")
+        
+        let startKeyframe = [0,1,1,1,1,1,1,1,1]
+        let dawnKeyframe =  [0,0.5,1,1,1,1,1,1,1]
+        let noonKeyframe =  [0,0,0,0.4,0.5,0.6,1,1,1]
+        let duskKeyframe =  [0,0,0,0,0,0,0,0.5,1]
+        let endKeyframe =  [0,0,0,0,0,0,0,0,1]
+        
+        oceanAnimation.values = [startKeyframe,dawnKeyframe,noonKeyframe,duskKeyframe,endKeyframe]
+        oceanAnimation.keyTimes = [0,0.1,0.5,0.9,1]
+        oceanAnimation.duration = 30
+        oceanGradient.add(oceanAnimation, forKey: "locations")
     }
     
     func setUpViews() {
@@ -277,7 +303,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func animateSun() {
-        animateGradient()
+        animateSkyGradient()
+        animateOceanGradient()
         
         let sun = SunView()
         
