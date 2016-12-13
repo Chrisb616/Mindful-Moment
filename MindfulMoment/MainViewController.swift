@@ -204,6 +204,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             animateSun()
         }
         if secondsInTime % 40 == 20 {
+            moon.advanceMoon()
             animateMoon()
         }
         secondsInTime += 1
