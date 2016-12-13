@@ -12,7 +12,9 @@ import UIKit
 
 extension UIColor {
     static let themeTeal = UIColor.init(red: 114/255, green: 194/255, blue: 157/255, alpha: 1)
-    static let themeTealAccent1 = UIColor.init(red: 170/255, green: 200/255, blue: 160/255, alpha: 1)
+    static let nightTeal = UIColor.init(red: 64/255, green: 154/255, blue: 137/255, alpha: 1)
+    //    static let themeTealAccent1 = UIColor.init(red: 170/255, green: 200/255, blue: 160/255, alpha: 1)
+    static let themeTealAccent1 = UIColor.init(red: 180/255, green: 210/255, blue: 170/255, alpha: 1)
     static let themePurple = UIColor.init(red: 113/255, green: 81/255, blue: 130/255, alpha: 1)
     static let themeYellow = UIColor.init(red: 210/255, green: 219/255, blue: 183/255, alpha: 1)
 }

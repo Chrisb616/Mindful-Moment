@@ -26,6 +26,9 @@
 		1B2411951DFF01BC009767CF /* UIImageConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2411941DFF01BC009767CF /* UIImageConstants.swift */; };
 		1B2411971DFF0276009767CF /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2411961DFF0276009767CF /* UIView.swift */; };
 		1B2411991DFF40E9009767CF /* MoonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2411981DFF40E9009767CF /* MoonView.swift */; };
+		1BAB3F0E1E004C2C0028C950 /* StarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAB3F0D1E004C2C0028C950 /* StarView.swift */; };
+		1BAB3F101E0052180028C950 /* ConstellationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAB3F0F1E0052180028C950 /* ConstellationView.swift */; };
+		1BAB3F121E0055530028C950 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAB3F111E0055530028C950 /* Array.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +54,9 @@
 		1B2411941DFF01BC009767CF /* UIImageConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageConstants.swift; sourceTree = "<group>"; };
 		1B2411961DFF0276009767CF /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		1B2411981DFF40E9009767CF /* MoonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoonView.swift; sourceTree = "<group>"; };
+		1BAB3F0D1E004C2C0028C950 /* StarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarView.swift; sourceTree = "<group>"; };
+		1BAB3F0F1E0052180028C950 /* ConstellationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstellationView.swift; sourceTree = "<group>"; };
+		1BAB3F111E0055530028C950 /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +120,8 @@
 				1B1017171DFC387F00D4AA44 /* SessionsViewController.swift */,
 				1B2411911DFF0098009767CF /* SunView.swift */,
 				1B2411981DFF40E9009767CF /* MoonView.swift */,
+				1BAB3F0D1E004C2C0028C950 /* StarView.swift */,
+				1BAB3F0F1E0052180028C950 /* ConstellationView.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -127,6 +135,7 @@
 				1B10172A1DFC73E600D4AA44 /* Double.swift */,
 				1B10172C1DFC74C500D4AA44 /* CGAffineTransform.swift */,
 				1B2411961DFF0276009767CF /* UIView.swift */,
+				1BAB3F111E0055530028C950 /* Array.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -236,11 +245,14 @@
 				1B10171F1DFC387F00D4AA44 /* UIColor.swift in Sources */,
 				1B1017021DFC37EA00D4AA44 /* AppDelegate.swift in Sources */,
 				1B10172D1DFC74C500D4AA44 /* CGAffineTransform.swift in Sources */,
+				1BAB3F121E0055530028C950 /* Array.swift in Sources */,
 				1B1017291DFC4A2000D4AA44 /* Int.swift in Sources */,
 				1B2411951DFF01BC009767CF /* UIImageConstants.swift in Sources */,
+				1BAB3F101E0052180028C950 /* ConstellationView.swift in Sources */,
 				1B2411971DFF0276009767CF /* UIView.swift in Sources */,
 				1B10171C1DFC387F00D4AA44 /* MainViewController.swift in Sources */,
 				1B10172B1DFC73E600D4AA44 /* Double.swift in Sources */,
+				1BAB3F0E1E004C2C0028C950 /* StarView.swift in Sources */,
 				1B1017201DFC387F00D4AA44 /* UIFont.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

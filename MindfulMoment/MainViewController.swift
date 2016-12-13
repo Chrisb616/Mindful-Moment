@@ -31,9 +31,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     var startTime = Date()
     var endTime = Date()
     
-    var sun = SunView()
-    var moon = MoonView()
-    
     @IBOutlet weak var mountain: UIImageView!
     @IBOutlet weak var mountain2: UIImageView!
     @IBOutlet weak var mountain3: UIImageView!
@@ -41,11 +38,46 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var openingSun: UIImageView!
     @IBOutlet weak var openingSunRays: UIImageView!
     
+    var moonPhase = MoonView.MoonPhase.new
     
     var sessions = [Session]()
     
+    let constellationTL = ConstellationView()
+    let constellationTR = ConstellationView()
+    let constellationBL = ConstellationView()
+    let constellationBR = ConstellationView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        
+        
+        self.view.addSubview(constellationTL)
+        self.view.addSubview(constellationTR)
+        self.view.addSubview(constellationBL)
+        self.view.addSubview(constellationBR)
+        
+        constellationTL.alpha = 0
+        constellationTR.alpha = 0
+        constellationBL.alpha = 0
+        constellationBR.alpha = 0
+        
+        constellationTL.frame = CGRect(x: 0, y: 0, width: self.view.frame.width / 2, height: self.view.frame.width / 2)
+        constellationTR.frame = CGRect(x: self.view.frame.width / 2, y: 0, width: self.view.frame.width / 2, height: self.view.frame.width / 2)
+        constellationBL.frame = CGRect(x: 0, y: self.view.frame.width / 2, width: self.view.frame.width / 2, height: self.view.frame.width / 2)
+        constellationBR.frame = CGRect(x: self.view.frame.width / 2, y: self.view.frame.width / 2, width: self.view.frame.width / 2, height: self.view.frame.width / 2)
+        
+        self.view.sendSubview(toBack: constellationTL)
+        self.view.sendSubview(toBack: constellationTR)
+        self.view.sendSubview(toBack: constellationBL)
+        self.view.sendSubview(toBack: constellationBR)
+        
+        constellationTL.layoutStars()
+        constellationTR.layoutStars()
+        constellationBL.layoutStars()
+        constellationBR.layoutStars()
+        
         
         setUpViews()
         openingAnimation()
@@ -61,21 +93,39 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         self.view.layoutIfNeeded()
         
         store.getMeditationsFromHeath {}
+        setUpGradient()
         
     }
-//    
-//    func setUpGradient() {
-//        let skyGradient = CAGradientLayer()
-//        let bright = UIColor.themeTealAccent1.cgColor
-//        let dark = UIColor.themeTeal.cgColor
-//        
-//        skyGradient.colors = [bright,dark]
-//        skyGradient.locations = [0, 1]
-//        skyGradient.startPoint = CGPoint(x: 0, y: 0)
-//        skyGradient.endPoint = CGPoint(x: 1, y: 0.5)
-//        skyGradient.frame = self.view.frame
-//        self.view.layer.insertSublayer(skyGradient, at: 0)
-//    }
+    let skyGradient = CAGradientLayer()
+    
+    func setUpGradient() {
+        
+        let bright = UIColor.themeTealAccent1.cgColor
+        let dark = UIColor.nightTeal.cgColor
+        
+        skyGradient.colors = [dark, dark, bright, bright, bright, dark, dark]
+        skyGradient.locations = [0,1,1,1,1,1,1]
+        skyGradient.startPoint = CGPoint(x: -1, y: 0)
+        skyGradient.endPoint = CGPoint(x: 2, y: 0)
+        skyGradient.frame = self.view.frame
+        self.view.layer.insertSublayer(skyGradient, at: 0)
+        skyGradient.bounds = self.view.bounds
+        
+    }
+    func animateGradient() {
+        let skyAnimation = CAKeyframeAnimation(keyPath: "locations")
+        
+        let startKeyframe = [0,1,2,2,2,2,2]
+        let dawnKeyframe = [0,0.5,1,1,1,2,2]
+        let noonKeyframe = [0,-1,0,0.5,1,2,2]
+        let duskKeyframe = [0,-1,0,0,0,0.5,1]
+        let endKeyframe = [0,-1,-1,-1,-1,0,0]
+        
+        skyAnimation.values = [startKeyframe,dawnKeyframe,noonKeyframe,duskKeyframe,endKeyframe]
+        skyAnimation.keyTimes = [0,0.1,0.5,0.9,1]
+        skyAnimation.duration = 30
+        skyGradient.add(skyAnimation, forKey: "locations")
+    }
     
     func setUpViews() {
         print(startButton.allTargets)
@@ -182,8 +232,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             })
         })
         
-        self.view.addSubview(sun)
-        self.view.addSubview(moon)
         
     }
     func endTimer() {
@@ -200,11 +248,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         })
     }
     func updateTime(_ sender: Timer) {
-        if secondsInTime % 40 == 0 {
+        if secondsInTime % 60 == 0 {
             animateSun()
         }
-        if secondsInTime % 40 == 20 {
-            moon.advanceMoon()
+        if secondsInTime % 60 == 15 {
+            animateStars()
+        }
+        if secondsInTime % 60 == 30 {
             animateMoon()
         }
         secondsInTime += 1
@@ -227,43 +277,89 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func animateSun() {
+        animateGradient()
+        
+        let sun = SunView()
+        
+        self.view.addSubview(sun)
+        
         sun.animateRays()
         
         sun.frame = CGRect(x: self.view.frame.width, y: self.view.frame.height, width: self.view.frame.width * 0.4, height: self.view.frame.width * 0.4)
         
         let sunPath = UIBezierPath()
         sunPath.move(to: CGPoint(x: self.view.frame.width * 2, y: self.view.frame.height))
-        sunPath.addQuadCurve(to: CGPoint(x: self.view.frame.width * -1, y: self.view.frame.height) , controlPoint: CGPoint(x: self.view.frame.width/2, y: self.view.frame.height * -0.75))
+        sunPath.addQuadCurve(to: CGPoint(x: self.view.frame.width * -1, y: self.view.frame.height) , controlPoint: CGPoint(x: self.view.frame.width/2, y: self.view.frame.height * -0.77))
         
         
         let sunArcAnimation = CAKeyframeAnimation(keyPath: "position")
         sunArcAnimation.path = sunPath.cgPath
         sunArcAnimation.repeatCount = 0
-        sunArcAnimation.duration = 20.0
+        sunArcAnimation.duration = 30.0
         
         sun.layer.add(sunArcAnimation, forKey: "position")
+        
+        
         
     }
     
     func animateMoon() {
-        print("Moon triggered")
+        let updatedMoonPhase = advanceMoonPhase()
+        
+        moonPhase = updatedMoonPhase
         
         
-        moon.frame = CGRect(x: self.view.frame.width * -0.4, y: self.view.frame.height, width: self.view.frame.width * 0.4, height: self.view.frame.width * 0.4)
+        let moon = MoonView()
         
+        self.view.addSubview(moon)
         
+        moon.moonImageView = UIImageView(image: updatedMoonPhase.image)
         
+        moon.frame = CGRect(x: self.view.frame.width, y: self.view.frame.height, width: self.view.frame.width * 0.305, height: self.view.frame.width * 0.305)
+        
+    
         let moonPath = UIBezierPath()
         moonPath.move(to: CGPoint(x: self.view.frame.width * 2, y: self.view.frame.height))
-        moonPath.addQuadCurve(to: CGPoint(x: self.view.frame.width * -1, y: self.view.frame.height) , controlPoint: CGPoint(x: self.view.frame.width/2, y: self.view.frame.height * -0.75))
+        moonPath.addQuadCurve(to: CGPoint(x: self.view.frame.width * -1, y: self.view.frame.height) , controlPoint: CGPoint(x: self.view.frame.width/2, y: self.view.frame.height * -0.83))
         
         
         let moonArcAnimation = CAKeyframeAnimation(keyPath: "position")
         moonArcAnimation.path = moonPath.cgPath
         moonArcAnimation.repeatCount = 0
-        moonArcAnimation.duration = 20.0
+        moonArcAnimation.duration = 30.0
         
         moon.layer.add(moonArcAnimation, forKey: "position")
+    }
+
+    
+    func advanceMoonPhase() -> MoonView.MoonPhase {
+        switch moonPhase {
+        case .new: return .waxingCrescent
+        case .waxingCrescent: return .firstQuarter
+        case .firstQuarter: return .waxingGibbous
+        case .waxingGibbous: return .full
+        case .full: return .waningGibbous
+        case .waningGibbous: return .thirdQuarter
+        case .thirdQuarter: return .waningCrescent
+        case .waningCrescent: return .new
+        }
+    }
+    
+    func animateStars() {
+        UIView.animateKeyframes(withDuration: 60, delay: 0, options: [.calculationModeCubic], animations: {
+            UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 1/6, animations: {
+                self.constellationTR.alpha = 1
+                self.constellationTL.alpha = 1
+                self.constellationBL.alpha = 1
+                self.constellationBR.alpha = 1
+            })
+            UIView.addKeyframe(withRelativeStartTime: 5/6, relativeDuration: 1/6, animations: {
+                self.constellationTR.alpha = 0
+                self.constellationTL.alpha = 0
+                self.constellationBL.alpha = 0
+                self.constellationBR.alpha = 0
+            })
+        })
     }
 }
 
