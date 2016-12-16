@@ -84,7 +84,21 @@ class ConstellationView: UIView {
                                width: self.frame.width * 0.1 * randomPercentSize,
                                height: self.frame.width * 0.1 * randomPercentSize)
         
-        starViews.append(newStar)
+        
+        var doesIntersect = false
+        
+        for starView in starViews {
+            if newStar.frame.intersects(starView.frame) {
+                doesIntersect = true
+            }
+        }
+        
+        if doesIntersect {
+            layoutStar()
+        } else {
+            self.addSubview(newStar)
+        }
+        
         
         
     }

@@ -57,10 +57,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         self.view.addSubview(constellationBL)
         self.view.addSubview(constellationBR)
         
-        constellationTL.alpha = 0
-        constellationTR.alpha = 0
-        constellationBL.alpha = 0
-        constellationBR.alpha = 0
+//        constellationTL.alpha = 0
+//        constellationTR.alpha = 0
+//        constellationBL.alpha = 0
+//        constellationBR.alpha = 0
         
         constellationTL.frame = CGRect(x: 0, y: 0, width: self.view.frame.width / 2, height: self.view.frame.width / 2)
         constellationTR.frame = CGRect(x: self.view.frame.width / 2, y: 0, width: self.view.frame.width / 2, height: self.view.frame.width / 2)
@@ -207,6 +207,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func startButtonTapped(_ sender: UIButton) {
+        
+        
         if countIsActive {
             countIsActive = false
             
@@ -237,6 +239,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
             countIsActive = true
             startTimer()
+            
+            initialAnimateStars()
         }
         
     }
@@ -369,6 +373,20 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         case .waningGibbous: return .thirdQuarter
         case .thirdQuarter: return .waningCrescent
         case .waningCrescent: return .new
+        }
+    }
+    
+    func initialAnimateStars() {
+        UIView.animate(withDuration: 15, animations: {
+            self.constellationTR.alpha = 0
+            self.constellationTL.alpha = 0
+            self.constellationBL.alpha = 0
+            self.constellationBR.alpha = 0
+        }) { (finished) in
+            self.constellationTR.alpha = 0
+            self.constellationTL.alpha = 0
+            self.constellationBL.alpha = 0
+            self.constellationBR.alpha = 0
         }
     }
     
