@@ -150,12 +150,41 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let startColorKeyFrame = [dark, dark, bright, bright, bright, dark, dark]
         let dawnColorKeyFrame = [dark, twilight, dawnOrange, dawnOrange, dawnOrange, dark, dark]
         let morningColorKeyFrame = [twilight, dawnOrange, bright, bright, bright, dark, dark]
+        let afternoonColorKeyFrame = [dark,dark,bright,bright,bright,dawnOrange,dark,twilight]
+        let duskColorKeyFrame = [dark,dark,dawnOrange,dawnOrange,dawnOrange,twilight,dark]
         
-        skyColorAnimation.values = [startColorKeyFrame,dawnColorKeyFrame,morningColorKeyFrame,startColorKeyFrame,startColorKeyFrame]
-        skyColorAnimation.keyTimes = [0,0.1,0.25,1,1]
+        skyColorAnimation.values = [startColorKeyFrame,dawnColorKeyFrame,morningColorKeyFrame,startColorKeyFrame,afternoonColorKeyFrame,duskColorKeyFrame,startColorKeyFrame]
+        skyColorAnimation.keyTimes = [0,0.1,0.25,0.5,0.75,0.9,1]
         skyColorAnimation.duration = 30
         skyGradient.add(skyColorAnimation, forKey: "colors")
         print("Finished Sky Animation")
+        
+        
+        
+        let skyGradientStartAnimation = CAKeyframeAnimation(keyPath: "startPoint")
+        
+        let gradientStartStartFrame = CGPoint(x: -1, y: -1)
+        let gradientStartMidFrame = CGPoint(x: -1, y: 0)
+        let gradientStartEndFrame = CGPoint(x: -1, y: 2)
+        
+        skyGradientStartAnimation.values = [gradientStartStartFrame, gradientStartMidFrame,gradientStartEndFrame]
+        skyGradientStartAnimation.keyTimes = [0,0.5,1]
+        skyGradientStartAnimation.duration = 30
+        skyGradient.add(skyGradientStartAnimation, forKey: "startPoint")
+        
+        
+        let skyGradientEndAnimation = CAKeyframeAnimation(keyPath: "endPoint")
+        
+        let gradientEndStartFrame = CGPoint(x: 2, y: 2)
+        let gradientEndMidFrame = CGPoint(x: 2, y: 0)
+        let gradientEndEndFrame = CGPoint(x: 2, y: -1)
+        
+        skyGradientEndAnimation.values = [gradientEndStartFrame, gradientEndMidFrame,gradientEndEndFrame]
+        skyGradientEndAnimation.keyTimes = [0,0.5,1]
+        skyGradientEndAnimation.duration = 30
+        skyGradient.add(skyGradientEndAnimation, forKey: "endPoint")
+        
+
     }
     func animateOceanGradient() {
         print("Ocean animating")
@@ -412,13 +441,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func animateStars() {
         UIView.animateKeyframes(withDuration: 60, delay: 0, options: [.calculationModeCubic], animations: {
-            UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 1/6, animations: {
+            UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 1/4, animations: {
                 self.constellationTR.alpha = 1
                 self.constellationTL.alpha = 1
                 self.constellationBL.alpha = 1
                 self.constellationBR.alpha = 1
             })
-            UIView.addKeyframe(withRelativeStartTime: 5/6, relativeDuration: 1/6, animations: {
+            UIView.addKeyframe(withRelativeStartTime: 3/4, relativeDuration: 1/8, animations: {
                 self.constellationTR.alpha = 0
                 self.constellationTL.alpha = 0
                 self.constellationBL.alpha = 0

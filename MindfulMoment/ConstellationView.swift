@@ -73,7 +73,7 @@ class ConstellationView: UIView {
             randomYOffset -= 20
         }
         
-        let randomPercentSize: CGFloat = 1
+        let randomPercentSize: CGFloat = CGFloat(arc4random_uniform(150))/100
         
         newStar.frame = CGRect(x: referenceStar.frame.origin.x,
                                y: referenceStar.frame.origin.y,
@@ -83,11 +83,11 @@ class ConstellationView: UIView {
         newStar.center.x += randomXOffset
         newStar.center.y += randomYOffset
         
-//        if !self.frame.contains(newStar.frame) {
-//            newStar.removeFromSuperview()
-//            return
-//            
-//        }
+        if !self.bounds.contains(newStar.frame) {
+            newStar.removeFromSuperview()
+            return
+            
+        }
         
         for star in starViews {
             if newStar.frame.intersects(star.frame) {
@@ -164,7 +164,7 @@ class ConstellationView: UIView {
 //    }
     
     var numberOfStars: Int {
-        let random = Int(arc4random_uniform(10))
+        let random = Int(arc4random_uniform(5))
         
         return random + 10
     }
