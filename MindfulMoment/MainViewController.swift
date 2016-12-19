@@ -136,6 +136,26 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         skyAnimation.keyTimes = [0,0.1,0.5,0.9,1]
         skyAnimation.duration = 30
         skyGradient.add(skyAnimation, forKey: "locations")
+        
+        
+        
+        let bright = UIColor.themeTealAccent1.cgColor
+        let dark = UIColor.nightTeal.cgColor
+        let twilight = UIColor.twilight.cgColor
+        let dawnOrange = UIColor.sunRiseOrange.cgColor
+        //let dawnRed = UIColor.sunRiseRed.cgColor
+        
+        let skyColorAnimation = CAKeyframeAnimation(keyPath: "colors")
+        
+        let startColorKeyFrame = [dark, dark, bright, bright, bright, dark, dark]
+        let dawnColorKeyFrame = [dark, twilight, dawnOrange, dawnOrange, dawnOrange, dark, dark]
+        let morningColorKeyFrame = [twilight, dawnOrange, bright, bright, bright, dark, dark]
+        
+        skyColorAnimation.values = [startColorKeyFrame,dawnColorKeyFrame,morningColorKeyFrame,startColorKeyFrame,startColorKeyFrame]
+        skyColorAnimation.keyTimes = [0,0.1,0.25,1,1]
+        skyColorAnimation.duration = 30
+        skyGradient.add(skyColorAnimation, forKey: "colors")
+        print("Finished Sky Animation")
     }
     func animateOceanGradient() {
         print("Ocean animating")

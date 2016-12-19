@@ -45,8 +45,6 @@ class ConstellationView: UIView {
         
         newStar.frame = CGRect(x: self.frame.width / 2, y: self.frame.height / 2, width: self.frame.width * 0.1 * randomPercentSize, height: self.frame.width * 0.1 * randomPercentSize)
         
-        newStar.backgroundColor = UIColor.red
-        
         starViews.append(newStar)
         
     }
@@ -59,8 +57,21 @@ class ConstellationView: UIView {
         
         let referenceStar = starViews.randomElement()
         
-        var randomXOffset: CGFloat = 10
-        var randomYOffset: CGFloat = 10
+        var randomXOffset: CGFloat = CGFloat(arc4random_uniform(100)) - 50
+        
+        if randomXOffset > 0 {
+            randomXOffset += 20
+        } else {
+            randomXOffset -= 20
+        }
+        
+        var randomYOffset: CGFloat = CGFloat(arc4random_uniform(200)) - 100
+        
+        if randomYOffset > 0 {
+            randomYOffset += 20
+        } else {
+            randomYOffset -= 20
+        }
         
         let randomPercentSize: CGFloat = 1
         
@@ -71,6 +82,21 @@ class ConstellationView: UIView {
         
         newStar.center.x += randomXOffset
         newStar.center.y += randomYOffset
+        
+//        if !self.frame.contains(newStar.frame) {
+//            newStar.removeFromSuperview()
+//            return
+//            
+//        }
+        
+        for star in starViews {
+            if newStar.frame.intersects(star.frame) {
+                newStar.removeFromSuperview()
+                return
+            }
+        }
+        
+        starViews.append(newStar)
     }
     
 //    private func layoutStar() {
@@ -138,8 +164,8 @@ class ConstellationView: UIView {
 //    }
     
     var numberOfStars: Int {
-        let random = Int(arc4random_uniform(0))
+        let random = Int(arc4random_uniform(10))
         
-        return random + 2
+        return random + 10
     }
 }
