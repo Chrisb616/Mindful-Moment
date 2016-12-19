@@ -24,6 +24,25 @@ extension CGPoint {
         
         let c = CGFloat(sqrt(Double(cSquared)))
         
+        print("the point is \(c) points away")
+        
         return c <= distance
+    }
+    
+    func distance(to point: CGPoint) -> CGFloat {
+        let originX = self.x
+        let originY = self.y
+        
+        let destinationX = point.x
+        let destinationY = point.y
+        
+        let a = abs(Int32(originX - destinationX))
+        let b = abs(Int32(originY - destinationY))
+        
+        let cSquared = (a * a) + (b * b)
+        
+        let c = CGFloat(sqrt(Double(cSquared)))
+        
+        return c
     }
 }
