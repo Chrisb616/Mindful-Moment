@@ -51,8 +51,23 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     private let musicManager = MusicManager.shared
     
+    var infoLabel = UILabel()
+    var infoButton = UIButton()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        self.view.addSubview(infoButton)
+        infoButton.frame = CGRect(x: 20, y: 30, width: self.view.frame.width * 0.15, height: self.view.frame.width * 0.15)
+        infoButton.addTarget(self, action: #selector(showInfo), for: .touchUpInside)
+        
+        infoButton.addFittedSubview(infoLabel)
+        infoLabel.text = Icon.Library.info.rawValue
+        infoLabel.font = Icon.Size.medium.font
+        infoLabel.textAlignment = .center
+        infoLabel.textColor = UIColor.sunGlare
+        
         
         openingSun.isHidden = true
         openingSunRays.isHidden = true
@@ -101,6 +116,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         setUpGradients()
         
     }
+    
+    func showInfo() {
+        present(InfoViewController(), animated: true)
+    }
+    
     let skyGradient = CAGradientLayer()
     let oceanGradient = CAGradientLayer()
     
@@ -265,7 +285,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func startButtonTapped(_ sender: UIButton) {
         
-        musicManager.playRandomSong()
         
         if countIsActive {
             countIsActive = false
@@ -277,11 +296,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             UIView.animate(withDuration: 0.5, animations: {
                 sender.transform = CGAffineTransform(scaleX: 1, y: 1)
                 self.pastButton.alpha = 1
+                self.infoButton.alpha = 1
                 self.view.layoutIfNeeded()
             })
             
             
             endTimer()
+            musicManager.stopSong()
             HealthManager.saveMeditation(start: startTime, end: endTime)
             
         } else {
@@ -292,11 +313,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             UIView.animate(withDuration: 0.5, animations: {
                 sender.transform = CGAffineTransform(scaleX: 1, y: 1)
                 self.pastButton.alpha = 0
+                self.infoButton.alpha = 0
                 self.view.layoutIfNeeded()
             })
             
             countIsActive = true
             startTimer()
+            musicManager.startSong()
             
             //initialAnimateStars()
         }

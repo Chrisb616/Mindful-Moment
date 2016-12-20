@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -50,24 +50,15 @@
                                     <constraint firstAttribute="width" secondItem="swB-ZX-Qqr" secondAttribute="height" multiplier="1:1" id="KLP-V4-rm2"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flatiron School Presents" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TeK-we-el6">
-                                <rect key="frame" x="0.0" y="322.5" width="375" height="23"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="TeK-we-el6" secondAttribute="height" multiplier="375:23" id="HZ5-iX-l89"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
-                                <color key="textColor" red="0.81960784310000001" green="0.85882352939999995" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pmi-yE-fGD">
                                 <rect key="frame" x="75" y="250.5" width="225" height="667"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mindfulness" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="9J9-VG-Y4p">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mindful Moment" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="9J9-VG-Y4p">
                                 <rect key="frame" x="19" y="345.5" width="337.5" height="63"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="9J9-VG-Y4p" secondAttribute="height" multiplier="75:14" id="ksb-dW-UbA"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="AvenirNext-Heavy" family="Avenir Next" pointSize="51"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Heavy" family="Avenir Next" pointSize="40"/>
                                 <color key="textColor" red="0.81960784310000001" green="0.85882352939999995" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -79,36 +70,32 @@
                             <constraint firstItem="nRv-ws-jug" firstAttribute="top" secondItem="hOs-Bl-fJM" secondAttribute="top" id="3Dl-QD-e90"/>
                             <constraint firstItem="hOs-Bl-fJM" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.4" id="3ep-pw-tUE"/>
                             <constraint firstItem="hOs-Bl-fJM" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" id="5TK-J7-983"/>
+                            <constraint firstItem="9J9-VG-Y4p" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="325.5" id="6Az-4x-7vy"/>
                             <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="ieN-TP-db9" secondAttribute="bottom" id="6vH-eT-IHg"/>
                             <constraint firstItem="bkk-sb-arf" firstAttribute="centerX" secondItem="Pmi-yE-fGD" secondAttribute="leading" id="BJs-dI-BzE"/>
-                            <constraint firstItem="9J9-VG-Y4p" firstAttribute="width" secondItem="TeK-we-el6" secondAttribute="width" multiplier="0.9" id="E9j-IR-G7U"/>
                             <constraint firstItem="ieN-TP-db9" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" id="FQY-Qb-QN3"/>
                             <constraint firstItem="WMF-au-elZ" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" id="GxJ-uy-hJw"/>
+                            <constraint firstItem="9J9-VG-Y4p" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.9" id="HMn-5i-bX5"/>
                             <constraint firstItem="JFd-cM-dpN" firstAttribute="centerX" secondItem="Pmi-yE-fGD" secondAttribute="trailing" id="Ohh-gf-jzJ"/>
                             <constraint firstItem="Pmi-yE-fGD" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.6" id="QUf-fJ-mea"/>
                             <constraint firstItem="Pmi-yE-fGD" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="SKt-O1-89s"/>
                             <constraint firstItem="nRv-ws-jug" firstAttribute="trailing" secondItem="hOs-Bl-fJM" secondAttribute="trailing" id="UcA-O5-oLe"/>
                             <constraint firstItem="swB-ZX-Qqr" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.4" id="UgA-US-4yd"/>
                             <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="JFd-cM-dpN" secondAttribute="bottom" id="Ura-3m-bKh"/>
-                            <constraint firstItem="TeK-we-el6" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="VVH-5e-pQl"/>
                             <constraint firstItem="JFd-cM-dpN" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" constant="0.75" id="Zoh-KN-UNl"/>
                             <constraint firstAttribute="trailing" secondItem="ieN-TP-db9" secondAttribute="trailing" id="aM0-Mv-9Cq"/>
                             <constraint firstItem="hOs-Bl-fJM" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" id="fHY-pL-dF3"/>
-                            <constraint firstItem="TeK-we-el6" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" id="fXr-UE-8rW"/>
                             <constraint firstItem="nRv-ws-jug" firstAttribute="leading" secondItem="hOs-Bl-fJM" secondAttribute="leading" id="fwD-F9-qQw"/>
                             <constraint firstItem="hOs-Bl-fJM" firstAttribute="width" secondItem="hOs-Bl-fJM" secondAttribute="height" multiplier="1:1" id="h8q-TD-YPP"/>
                             <constraint firstItem="swB-ZX-Qqr" firstAttribute="trailing" secondItem="Ze5-6b-2t3" secondAttribute="trailing" id="hV1-U8-C2j"/>
-                            <constraint firstItem="TeK-we-el6" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="375:667" id="hxF-ZQ-JO8"/>
                             <constraint firstItem="WMF-au-elZ" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="ijG-rL-AdJ"/>
                             <constraint firstItem="Pmi-yE-fGD" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" id="jtq-56-zMv"/>
-                            <constraint firstItem="9J9-VG-Y4p" firstAttribute="top" secondItem="TeK-we-el6" secondAttribute="bottom" id="l0Z-dp-dVn"/>
                             <constraint firstItem="JFd-cM-dpN" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="0.75" id="mh1-aa-aAg"/>
-                            <constraint firstItem="TeK-we-el6" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="nLN-Nv-IIw"/>
+                            <constraint firstItem="9J9-VG-Y4p" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="n2C-z7-RUc"/>
                             <constraint firstItem="nRv-ws-jug" firstAttribute="bottom" secondItem="hOs-Bl-fJM" secondAttribute="bottom" id="opq-tZ-iaa"/>
                             <constraint firstItem="WMF-au-elZ" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="345" id="p3J-Ut-Z9L"/>
                             <constraint firstItem="Pmi-yE-fGD" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" multiplier="1.75" id="pGX-HY-pkc"/>
                             <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="bkk-sb-arf" secondAttribute="bottom" id="sou-ky-PyR"/>
-                            <constraint firstItem="9J9-VG-Y4p" firstAttribute="centerX" secondItem="TeK-we-el6" secondAttribute="centerX" id="uEq-BE-GTx"/>
                             <constraint firstItem="bkk-sb-arf" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="0.75" id="ubw-on-SiU"/>
                             <constraint firstItem="bkk-sb-arf" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.75" id="w6u-yX-0u8"/>
                             <constraint firstItem="swB-ZX-Qqr" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" id="wDL-cv-hPA"/>

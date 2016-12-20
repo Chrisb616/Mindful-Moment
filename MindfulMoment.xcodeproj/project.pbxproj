@@ -32,6 +32,9 @@
 		1BA7ED3F1E09685D00B44F43 /* 02The_Ambient_Ukulele.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1BA7ED3B1E09685D00B44F43 /* 02The_Ambient_Ukulele.mp3 */; };
 		1BA7ED401E09685D00B44F43 /* 03Illuminations.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1BA7ED3C1E09685D00B44F43 /* 03Illuminations.mp3 */; };
 		1BA7ED411E09685D00B44F43 /* 04Squinting_at_the_Sun.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1BA7ED3D1E09685D00B44F43 /* 04Squinting_at_the_Sun.mp3 */; };
+		1BA7ED441E09814900B44F43 /* Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA7ED431E09814900B44F43 /* Icons.swift */; };
+		1BA7ED451E09818600B44F43 /* FontAwesome.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1BA7ED421E09814100B44F43 /* FontAwesome.otf */; };
+		1BA7ED471E0987D800B44F43 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA7ED461E0987D800B44F43 /* InfoViewController.swift */; };
 		1BAB3F0E1E004C2C0028C950 /* StarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAB3F0D1E004C2C0028C950 /* StarView.swift */; };
 		1BAB3F101E0052180028C950 /* ConstellationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAB3F0F1E0052180028C950 /* ConstellationView.swift */; };
 		1BAB3F121E0055530028C950 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAB3F111E0055530028C950 /* Array.swift */; };
@@ -66,6 +69,9 @@
 		1BA7ED3B1E09685D00B44F43 /* 02The_Ambient_Ukulele.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 02The_Ambient_Ukulele.mp3; path = Music/02The_Ambient_Ukulele.mp3; sourceTree = "<group>"; };
 		1BA7ED3C1E09685D00B44F43 /* 03Illuminations.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 03Illuminations.mp3; path = Music/03Illuminations.mp3; sourceTree = "<group>"; };
 		1BA7ED3D1E09685D00B44F43 /* 04Squinting_at_the_Sun.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 04Squinting_at_the_Sun.mp3; path = Music/04Squinting_at_the_Sun.mp3; sourceTree = "<group>"; };
+		1BA7ED421E09814100B44F43 /* FontAwesome.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome.otf; path = "../../../../Downloads/font-awesome-4.7.0/fonts/FontAwesome.otf"; sourceTree = "<group>"; };
+		1BA7ED431E09814900B44F43 /* Icons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Icons.swift; sourceTree = "<group>"; };
+		1BA7ED461E0987D800B44F43 /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		1BAB3F0D1E004C2C0028C950 /* StarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarView.swift; sourceTree = "<group>"; };
 		1BAB3F0F1E0052180028C950 /* ConstellationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstellationView.swift; sourceTree = "<group>"; };
 		1BAB3F111E0055530028C950 /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
@@ -103,6 +109,7 @@
 		1B1017001DFC37EA00D4AA44 /* MindfulMoment */ = {
 			isa = PBXGroup;
 			children = (
+				1BA7ED421E09814100B44F43 /* FontAwesome.otf */,
 				1BA7ED391E09685000B44F43 /* Music */,
 				1B2411931DFF01AF009767CF /* Constants */,
 				1B1017211DFC3AC200D4AA44 /* MindfulMoment.entitlements */,
@@ -135,6 +142,7 @@
 				1B2411981DFF40E9009767CF /* MoonView.swift */,
 				1BAB3F0D1E004C2C0028C950 /* StarView.swift */,
 				1BAB3F0F1E0052180028C950 /* ConstellationView.swift */,
+				1BA7ED461E0987D800B44F43 /* InfoViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -169,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				1B2411941DFF01BC009767CF /* UIImageConstants.swift */,
+				1BA7ED431E09814900B44F43 /* Icons.swift */,
 			);
 			name = Constants;
 			sourceTree = "<group>";
@@ -255,6 +264,7 @@
 				1B10170C1DFC37EA00D4AA44 /* LaunchScreen.storyboard in Resources */,
 				1BA7ED3F1E09685D00B44F43 /* 02The_Ambient_Ukulele.mp3 in Resources */,
 				1B1017091DFC37EA00D4AA44 /* Assets.xcassets in Resources */,
+				1BA7ED451E09818600B44F43 /* FontAwesome.otf in Resources */,
 				1B1017071DFC37EA00D4AA44 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,8 +288,10 @@
 				1B10172D1DFC74C500D4AA44 /* CGAffineTransform.swift in Sources */,
 				1BAB3F121E0055530028C950 /* Array.swift in Sources */,
 				1B1017291DFC4A2000D4AA44 /* Int.swift in Sources */,
+				1BA7ED471E0987D800B44F43 /* InfoViewController.swift in Sources */,
 				1B2411951DFF01BC009767CF /* UIImageConstants.swift in Sources */,
 				1BAB3F101E0052180028C950 /* ConstellationView.swift in Sources */,
+				1BA7ED441E09814900B44F43 /* Icons.swift in Sources */,
 				1B2411971DFF0276009767CF /* UIView.swift in Sources */,
 				1B10171C1DFC387F00D4AA44 /* MainViewController.swift in Sources */,
 				1B10172B1DFC73E600D4AA44 /* Double.swift in Sources */,
@@ -412,9 +424,10 @@
 				DEVELOPMENT_TEAM = 6X2L9APT92;
 				INFOPLIST_FILE = MindfulMoment/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.self.MindfulMoment;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ChristopherBoynton.MindfulMoment;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -426,9 +439,10 @@
 				DEVELOPMENT_TEAM = 6X2L9APT92;
 				INFOPLIST_FILE = MindfulMoment/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.self.MindfulMoment;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ChristopherBoynton.MindfulMoment;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

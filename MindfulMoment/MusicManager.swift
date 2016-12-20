@@ -16,7 +16,9 @@ class MusicManager {
     
     var audioPlayer = AVAudioPlayer()
     
-    func playRandomSong() {
+    var songTimer = Timer()
+    
+    @objc func startSong() {
         
         let rand = arc4random_uniform(4)
         let songURL: URL
@@ -24,15 +26,21 @@ class MusicManager {
         switch rand {
         case 0:
             songURL = URL(fileURLWithPath: Bundle.main.path(forResource: "01Ataraxia", ofType: "mp3")!)
+            songTimer = Timer.scheduledTimer(timeInterval: 788.74, target: self, selector: #selector(startSong), userInfo: nil, repeats: false)
         case 1:
             songURL = URL(fileURLWithPath: Bundle.main.path(forResource: "02The_Ambient_Ukulele", ofType: "mp3")!)
+            songTimer = Timer.scheduledTimer(timeInterval: 777.33, target: self, selector: #selector(startSong), userInfo: nil, repeats: false)
         case 2:
             songURL = URL(fileURLWithPath: Bundle.main.path(forResource: "03Illuminations", ofType: "mp3")!)
+            songTimer = Timer.scheduledTimer(timeInterval: 459.23, target: self, selector: #selector(startSong), userInfo: nil, repeats: false)
         case 3:
             songURL = URL(fileURLWithPath: Bundle.main.path(forResource: "04Squinting_at_the_Sun", ofType: "mp3")!)
+            songTimer = Timer.scheduledTimer(timeInterval: 790.13, target: self, selector: #selector(startSong), userInfo: nil, repeats: false)
         default:
             songURL = URL(fileURLWithPath: Bundle.main.path(forResource: "01Ataraxia", ofType: "mp3")!)
+            songTimer = Timer.scheduledTimer(timeInterval: 788.74, target: self, selector: #selector(startSong), userInfo: nil, repeats: false)
         }
+    
         
         do {
             try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback, with: [.mixWithOthers])
@@ -51,6 +59,10 @@ class MusicManager {
             print("FAILURE: Error with setting up audio player")
         }
         
+    }
+    
+    func stopSong() {
+        audioPlayer.setVolume(0, fadeDuration: 3)
     }
     
 }
