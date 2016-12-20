@@ -49,9 +49,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     let constellationBL = ConstellationView()
     let constellationBR = ConstellationView()
     
+    private let musicManager = MusicManager.shared
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        openingSun.isHidden = true
+        openingSunRays.isHidden = true
+        openingMoon.isHidden = true
         
         self.view.addSubview(constellationTL)
         self.view.addSubview(constellationTR)
@@ -135,12 +140,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         skyAnimation.values = [startKeyframe,dawnKeyframe,noonKeyframe,duskKeyframe,endKeyframe]
         skyAnimation.keyTimes = [0,0.1,0.5,0.9,1]
-        skyAnimation.duration = 30
+        skyAnimation.duration = 30 * timerMult
         skyGradient.add(skyAnimation, forKey: "locations")
         
         
         
         let bright = UIColor.themeTealAccent1.cgColor
+        let day = UIColor.themeTeal.cgColor
         let dark = UIColor.nightTeal.cgColor
         let twilight = UIColor.twilight.cgColor
         let dawnOrange = UIColor.sunRiseOrange.cgColor
@@ -151,12 +157,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let startColorKeyFrame = [dark, dark, bright, bright, bright, dark, dark]
         let dawnColorKeyFrame = [dark, twilight, dawnOrange, dawnOrange, dawnOrange, dark, dark]
         let morningColorKeyFrame = [twilight, dawnOrange, bright, bright, bright, dark, dark]
+        let noonColorKeyFrame = [dark,dark,day,day,day,dark,dark]
         let afternoonColorKeyFrame = [dark,dark,bright,bright,bright,dawnOrange,dark,twilight]
         let duskColorKeyFrame = [dark,dark,dawnOrange,dawnOrange,dawnOrange,twilight,dark]
         
-        skyColorAnimation.values = [startColorKeyFrame,dawnColorKeyFrame,morningColorKeyFrame,startColorKeyFrame,afternoonColorKeyFrame,duskColorKeyFrame,startColorKeyFrame]
-        skyColorAnimation.keyTimes = [0,0.1,0.25,0.5,0.75,0.9,1]
-        skyColorAnimation.duration = 30
+        skyColorAnimation.values = [startColorKeyFrame,dawnColorKeyFrame,morningColorKeyFrame,noonColorKeyFrame,afternoonColorKeyFrame,duskColorKeyFrame,startColorKeyFrame]
+        skyColorAnimation.keyTimes = [0,0.1,0.25,0.5,0.8,0.9,1]
+        skyColorAnimation.duration = 30 * timerMult
         skyGradient.add(skyColorAnimation, forKey: "colors")
         print("Finished Sky Animation")
         
@@ -170,7 +177,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         skyGradientStartAnimation.values = [gradientStartStartFrame, gradientStartMidFrame,gradientStartEndFrame]
         skyGradientStartAnimation.keyTimes = [0,0.5,1]
-        skyGradientStartAnimation.duration = 30
+        skyGradientStartAnimation.duration = 30 * timerMult
         skyGradient.add(skyGradientStartAnimation, forKey: "startPoint")
         
         
@@ -182,7 +189,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         skyGradientEndAnimation.values = [gradientEndStartFrame, gradientEndMidFrame,gradientEndEndFrame]
         skyGradientEndAnimation.keyTimes = [0,0.5,1]
-        skyGradientEndAnimation.duration = 30
+        skyGradientEndAnimation.duration = 30 * timerMult
         skyGradient.add(skyGradientEndAnimation, forKey: "endPoint")
         
 
@@ -199,7 +206,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         oceanAnimation.values = [startKeyframe,dawnKeyframe,noonKeyframe,duskKeyframe,endKeyframe]
         oceanAnimation.keyTimes = [0,0.1,0.5,0.9,1]
-        oceanAnimation.duration = 30
+        oceanAnimation.duration = 30 * timerMult
         oceanGradient.add(oceanAnimation, forKey: "locations")
     }
     
@@ -258,6 +265,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func startButtonTapped(_ sender: UIButton) {
         
+        musicManager.playRandomSong()
         
         if countIsActive {
             countIsActive = false
@@ -295,6 +303,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
     }
     
+    let timerMult: Double = 10
+    
     func startTimer() {
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
         startTime = Date()
@@ -328,20 +338,40 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         })
     }
     func updateTime(_ sender: Timer) {
-        if secondsInTime % 60 == 0 {
-            animateSun()
-            fadeOutStars()
-        }
-        if secondsInTime % 60 == 23 {
-            fadeInStars()
-        }
-        if secondsInTime % 60 == 30 {
-            animateMoon()
-        }
-        if secondsInTime % 60 == 50 {
-        }
         secondsInTime += 1
         timerLabel.text = secondsInTime.convertedToTime
+        animationTimer()
+    }
+    
+    var animationTiming: Int = 0
+    var timeUntilNextAnimation: Int = 0
+    
+    func animationTimer() {
+        
+        if timeUntilNextAnimation == 0 {
+            
+            
+            if animationTiming % 60 == 0 {
+                animateSun()
+                fadeOutStars()
+            }
+            if animationTiming % 60 == 23 {
+                fadeInStars()
+            }
+            if animationTiming % 60 == 30 {
+                animateMoon()
+            }
+            if animationTiming % 60 == 50 {
+            }
+            
+            animationTiming += 1
+            
+            timeUntilNextAnimation = Int(timerMult)
+        }
+        
+        timeUntilNextAnimation -= 1
+        
+        
         
     }
     func pastButtonTapped() {
@@ -379,7 +409,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let sunArcAnimation = CAKeyframeAnimation(keyPath: "position")
         sunArcAnimation.path = sunPath.cgPath
         sunArcAnimation.repeatCount = 0
-        sunArcAnimation.duration = 30.0
+        sunArcAnimation.duration = 30.0 * timerMult
         
         sun.layer.add(sunArcAnimation, forKey: "position")
         
@@ -410,7 +440,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let moonArcAnimation = CAKeyframeAnimation(keyPath: "position")
         moonArcAnimation.path = moonPath.cgPath
         moonArcAnimation.repeatCount = 0
-        moonArcAnimation.duration = 30.0
+        moonArcAnimation.duration = 30.0 * timerMult
         
         moon.layer.add(moonArcAnimation, forKey: "position")
     }
@@ -429,7 +459,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
     func initialAnimateStars() {
-        UIView.animate(withDuration: 5, animations: {
+        UIView.animate(withDuration: 5 * timerMult, animations: {
             self.constellationTR.alpha = 0
             self.constellationTL.alpha = 0
             self.constellationBL.alpha = 0
@@ -443,7 +473,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
     }
     func fadeOutStars() {
-        UIView.animate(withDuration: 5, animations: {
+        UIView.animate(withDuration: 5 * timerMult, animations: {
             self.constellationTR.alpha = 0
             self.constellationTL.alpha = 0
             self.constellationBL.alpha = 0
@@ -457,7 +487,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func fadeInStars() {
-        UIView.animate(withDuration: 10, animations: {
+        UIView.animate(withDuration: 10 * timerMult, animations: {
             self.constellationTR.alpha = 1
             self.constellationTL.alpha = 1
             self.constellationBL.alpha = 1
