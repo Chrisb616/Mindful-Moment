@@ -27,6 +27,11 @@
 		1B2411971DFF0276009767CF /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2411961DFF0276009767CF /* UIView.swift */; };
 		1B2411991DFF40E9009767CF /* MoonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2411981DFF40E9009767CF /* MoonView.swift */; };
 		1B6A96D11E03109A003D4EC4 /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6A96D01E03109A003D4EC4 /* CGPoint.swift */; };
+		1BA7ED381E09676900B44F43 /* MusicManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA7ED371E09676900B44F43 /* MusicManager.swift */; };
+		1BA7ED3E1E09685D00B44F43 /* 01Ataraxia.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1BA7ED3A1E09685D00B44F43 /* 01Ataraxia.mp3 */; };
+		1BA7ED3F1E09685D00B44F43 /* 02The_Ambient_Ukulele.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1BA7ED3B1E09685D00B44F43 /* 02The_Ambient_Ukulele.mp3 */; };
+		1BA7ED401E09685D00B44F43 /* 03Illuminations.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1BA7ED3C1E09685D00B44F43 /* 03Illuminations.mp3 */; };
+		1BA7ED411E09685D00B44F43 /* 04Squinting_at_the_Sun.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1BA7ED3D1E09685D00B44F43 /* 04Squinting_at_the_Sun.mp3 */; };
 		1BAB3F0E1E004C2C0028C950 /* StarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAB3F0D1E004C2C0028C950 /* StarView.swift */; };
 		1BAB3F101E0052180028C950 /* ConstellationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAB3F0F1E0052180028C950 /* ConstellationView.swift */; };
 		1BAB3F121E0055530028C950 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAB3F111E0055530028C950 /* Array.swift */; };
@@ -56,6 +61,11 @@
 		1B2411961DFF0276009767CF /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		1B2411981DFF40E9009767CF /* MoonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoonView.swift; sourceTree = "<group>"; };
 		1B6A96D01E03109A003D4EC4 /* CGPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGPoint.swift; sourceTree = "<group>"; };
+		1BA7ED371E09676900B44F43 /* MusicManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicManager.swift; sourceTree = "<group>"; };
+		1BA7ED3A1E09685D00B44F43 /* 01Ataraxia.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 01Ataraxia.mp3; path = Music/01Ataraxia.mp3; sourceTree = "<group>"; };
+		1BA7ED3B1E09685D00B44F43 /* 02The_Ambient_Ukulele.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 02The_Ambient_Ukulele.mp3; path = Music/02The_Ambient_Ukulele.mp3; sourceTree = "<group>"; };
+		1BA7ED3C1E09685D00B44F43 /* 03Illuminations.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 03Illuminations.mp3; path = Music/03Illuminations.mp3; sourceTree = "<group>"; };
+		1BA7ED3D1E09685D00B44F43 /* 04Squinting_at_the_Sun.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 04Squinting_at_the_Sun.mp3; path = Music/04Squinting_at_the_Sun.mp3; sourceTree = "<group>"; };
 		1BAB3F0D1E004C2C0028C950 /* StarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarView.swift; sourceTree = "<group>"; };
 		1BAB3F0F1E0052180028C950 /* ConstellationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstellationView.swift; sourceTree = "<group>"; };
 		1BAB3F111E0055530028C950 /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
@@ -93,6 +103,7 @@
 		1B1017001DFC37EA00D4AA44 /* MindfulMoment */ = {
 			isa = PBXGroup;
 			children = (
+				1BA7ED391E09685000B44F43 /* Music */,
 				1B2411931DFF01AF009767CF /* Constants */,
 				1B1017211DFC3AC200D4AA44 /* MindfulMoment.entitlements */,
 				1B1017271DFC49AA00D4AA44 /* Models */,
@@ -149,6 +160,7 @@
 				1B1017131DFC387F00D4AA44 /* DataStore.swift */,
 				1B1017161DFC387F00D4AA44 /* Session.swift */,
 				1B1017141DFC387F00D4AA44 /* Health.swift */,
+				1BA7ED371E09676900B44F43 /* MusicManager.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -159,6 +171,17 @@
 				1B2411941DFF01BC009767CF /* UIImageConstants.swift */,
 			);
 			name = Constants;
+			sourceTree = "<group>";
+		};
+		1BA7ED391E09685000B44F43 /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				1BA7ED3A1E09685D00B44F43 /* 01Ataraxia.mp3 */,
+				1BA7ED3B1E09685D00B44F43 /* 02The_Ambient_Ukulele.mp3 */,
+				1BA7ED3C1E09685D00B44F43 /* 03Illuminations.mp3 */,
+				1BA7ED3D1E09685D00B44F43 /* 04Squinting_at_the_Sun.mp3 */,
+			);
+			name = Music;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,7 +249,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BA7ED401E09685D00B44F43 /* 03Illuminations.mp3 in Resources */,
+				1BA7ED411E09685D00B44F43 /* 04Squinting_at_the_Sun.mp3 in Resources */,
+				1BA7ED3E1E09685D00B44F43 /* 01Ataraxia.mp3 in Resources */,
 				1B10170C1DFC37EA00D4AA44 /* LaunchScreen.storyboard in Resources */,
+				1BA7ED3F1E09685D00B44F43 /* 02The_Ambient_Ukulele.mp3 in Resources */,
 				1B1017091DFC37EA00D4AA44 /* Assets.xcassets in Resources */,
 				1B1017071DFC37EA00D4AA44 /* Main.storyboard in Resources */,
 			);
@@ -257,6 +284,7 @@
 				1B10171C1DFC387F00D4AA44 /* MainViewController.swift in Sources */,
 				1B10172B1DFC73E600D4AA44 /* Double.swift in Sources */,
 				1BAB3F0E1E004C2C0028C950 /* StarView.swift in Sources */,
+				1BA7ED381E09676900B44F43 /* MusicManager.swift in Sources */,
 				1B1017201DFC387F00D4AA44 /* UIFont.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
