@@ -139,7 +139,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let endKeyframe = [0,0,0,0,0,0,1]
         
         skyAnimation.values = [startKeyframe,dawnKeyframe,noonKeyframe,duskKeyframe,endKeyframe]
-        skyAnimation.keyTimes = [0,0.1,0.5,0.9,1]
+        skyAnimation.keyTimes = [0,0.1,0.5,0.95,1]
         skyAnimation.duration = 30 * timerMult
         skyGradient.add(skyAnimation, forKey: "locations")
         
@@ -158,11 +158,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let dawnColorKeyFrame = [dark, twilight, dawnOrange, dawnOrange, dawnOrange, dark, dark]
         let morningColorKeyFrame = [twilight, dawnOrange, bright, bright, bright, dark, dark]
         let noonColorKeyFrame = [dark,dark,day,day,day,dark,dark]
-        let afternoonColorKeyFrame = [dark,dark,bright,bright,bright,dawnOrange,dark,twilight]
+        let afternoonColorKeyFrame = [dark,dark,day,day,dawnOrange,dark,twilight]
         let duskColorKeyFrame = [dark,dark,dawnOrange,dawnOrange,dawnOrange,twilight,dark]
         
         skyColorAnimation.values = [startColorKeyFrame,dawnColorKeyFrame,morningColorKeyFrame,noonColorKeyFrame,afternoonColorKeyFrame,duskColorKeyFrame,startColorKeyFrame]
-        skyColorAnimation.keyTimes = [0,0.1,0.25,0.5,0.8,0.9,1]
+        skyColorAnimation.keyTimes = [0,0.1,0.25,0.5,0.7,0.9,1]
         skyColorAnimation.duration = 30 * timerMult
         skyGradient.add(skyColorAnimation, forKey: "colors")
         print("Finished Sky Animation")
@@ -303,7 +303,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
     }
     
-    let timerMult: Double = 10
+    let timerMult: Double = 3
     
     func startTimer() {
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
@@ -473,7 +473,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
     }
     func fadeOutStars() {
-        UIView.animate(withDuration: 5 * timerMult, animations: {
+        UIView.animate(withDuration: 5 * timerMult, delay: 5, animations: {
             self.constellationTR.alpha = 0
             self.constellationTL.alpha = 0
             self.constellationBL.alpha = 0
@@ -487,7 +487,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func fadeInStars() {
-        UIView.animate(withDuration: 10 * timerMult, animations: {
+        UIView.animate(withDuration: 5 * timerMult, animations: {
             self.constellationTR.alpha = 1
             self.constellationTL.alpha = 1
             self.constellationBL.alpha = 1
