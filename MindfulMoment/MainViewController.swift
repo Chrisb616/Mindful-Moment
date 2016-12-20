@@ -8,6 +8,7 @@
 
 import UIKit
 import HealthKit
+
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     let healthStore = HealthManager.healthStore
@@ -289,7 +290,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             countIsActive = true
             startTimer()
             
-            initialAnimateStars()
+            //initialAnimateStars()
         }
         
     }
@@ -329,12 +330,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func updateTime(_ sender: Timer) {
         if secondsInTime % 60 == 0 {
             animateSun()
+            fadeOutStars()
         }
-        if secondsInTime % 60 == 15 {
-            animateStars()
+        if secondsInTime % 60 == 23 {
+            fadeInStars()
         }
         if secondsInTime % 60 == 30 {
             animateMoon()
+        }
+        if secondsInTime % 60 == 50 {
         }
         secondsInTime += 1
         timerLabel.text = secondsInTime.convertedToTime
@@ -424,9 +428,22 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         case .waningCrescent: return .new
         }
     }
-    
     func initialAnimateStars() {
-        UIView.animate(withDuration: 15, animations: {
+        UIView.animate(withDuration: 5, animations: {
+            self.constellationTR.alpha = 0
+            self.constellationTL.alpha = 0
+            self.constellationBL.alpha = 0
+            self.constellationBR.alpha = 0
+        }) { (finished) in
+            self.constellationTR.alpha = 0
+            self.constellationTL.alpha = 0
+            self.constellationBL.alpha = 0
+            self.constellationBR.alpha = 0
+        }
+        
+    }
+    func fadeOutStars() {
+        UIView.animate(withDuration: 5, animations: {
             self.constellationTR.alpha = 0
             self.constellationTL.alpha = 0
             self.constellationBL.alpha = 0
@@ -439,21 +456,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
     
-    func animateStars() {
-        UIView.animateKeyframes(withDuration: 60, delay: 0, options: [.calculationModeCubic], animations: {
-            UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 1/4, animations: {
-                self.constellationTR.alpha = 1
-                self.constellationTL.alpha = 1
-                self.constellationBL.alpha = 1
-                self.constellationBR.alpha = 1
-            })
-            UIView.addKeyframe(withRelativeStartTime: 3/4, relativeDuration: 1/8, animations: {
-                self.constellationTR.alpha = 0
-                self.constellationTL.alpha = 0
-                self.constellationBL.alpha = 0
-                self.constellationBR.alpha = 0
-            })
-        })
+    func fadeInStars() {
+        UIView.animate(withDuration: 10, animations: {
+            self.constellationTR.alpha = 1
+            self.constellationTL.alpha = 1
+            self.constellationBL.alpha = 1
+            self.constellationBR.alpha = 1
+        }) { (finished) in
+            self.constellationTR.alpha = 1
+            self.constellationTL.alpha = 1
+            self.constellationBL.alpha = 1
+            self.constellationBR.alpha = 1
+        }
     }
 }
 
