@@ -177,8 +177,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let dawnColorKeyFrame = [dark, twilight, dawnOrange, dawnOrange, dawnOrange, dark, dark]
         let morningColorKeyFrame = [twilight, dawnOrange, bright, bright, bright, dark, dark]
         let noonColorKeyFrame = [dark,dark,day,day,day,dark,dark]
-        let afternoonColorKeyFrame = [dark,dark,day,day,dawnOrange,dark,twilight]
-        let duskColorKeyFrame = [dark,dark,dawnOrange,dawnOrange,dawnOrange,twilight,dark]
+        let afternoonColorKeyFrame = [dark,dark,day,day,dawnOrange,twilight,twilight]
+        let duskColorKeyFrame = [dark,dark,dawnOrange,dawnOrange,dawnOrange,twilight,twilight]
         
         skyColorAnimation.values = [startColorKeyFrame,dawnColorKeyFrame,morningColorKeyFrame,noonColorKeyFrame,afternoonColorKeyFrame,duskColorKeyFrame,startColorKeyFrame]
         skyColorAnimation.keyTimes = [0,0.1,0.25,0.5,0.75,0.9,1]
@@ -325,7 +325,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
     }
     
-    let timerMult: Double = 3
+    let timerMult: Double = 1 
     
     func startTimer() {
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
@@ -361,6 +361,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         })
         
         UIApplication.shared.isIdleTimerDisabled = false
+        
+        timeUntilNextAnimation = 0
+        animationTiming = 0
     }
     
     func resetViews() {
@@ -373,6 +376,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         skyGradient.add(resetSkyColors, forKey: "colors")
         
+        let resetOceanColors = CABasicAnimation(keyPath: "colors")
+        
+        let nightOcean  = UIColor.nightOcean
+        
+        resetOceanColors.toValue = [nightOcean,nightOcean,nightOcean,nightOcean,nightOcean,nightOcean,nightOcean,nightOcean,nightOcean]
+        resetOceanColors.duration = 3
+        
+        oceanGradient.add(resetOceanColors, forKey: "colors")
+        
+        
         let resetStarAlpha = CABasicAnimation(keyPath: "opacity")
         
         resetStarAlpha.toValue = 1
@@ -384,7 +397,30 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         constellationBL.layer.add(resetStarAlpha, forKey: "opacity")
         
         
+        
+        let fadeSun = CABasicAnimation(keyPath: "opacity")
+        
+        fadeSun.toValue = 0
+        fadeSun.duration = 3
+        
+        sun.layer.add(fadeSun, forKey: "opacity")
+        
+        Timer.scheduledTimer(withTimeInterval: 2.9, repeats: false) { (timer) in
+            self.sun.layer.opacity = 0
+        }
+        
+        let fadeMoon = CABasicAnimation(keyPath: "opacity")
+        
+        fadeMoon.toValue = 0
+        fadeMoon.duration = 3
+        
+        moon.layer.add(fadeMoon, forKey: "opacity")
+        
         oceanGradient.removeAllAnimations()
+        
+        Timer.scheduledTimer(withTimeInterval: 2.9, repeats: false) { (timer) in
+            self.moon.layer.opacity = 0
+        }
     }
     
     func updateTime(_ sender: Timer) {
@@ -403,10 +439,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
             if animationTiming % 60 == 0 {
                 animateSun()
-                fadeOutStars()
+                animateStars()
+                //fadeOutStars()
             }
             if animationTiming % 60 == 23 {
-                fadeInStars()
+                //fadeInStars()
             }
             if animationTiming % 60 == 30 {
                 animateMoon()
@@ -445,6 +482,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         animateSkyGradient()
         animateOceanGradient()
         
+        sun.layer.opacity = 1
         
         self.view.addSubview(sun)
         
@@ -465,12 +503,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         sun.layer.add(sunArcAnimation, forKey: "position")
         
         
-        
     }
     
     let moon = MoonView()
     
     func animateMoon() {
+        moon.layer.opacity = 1
+        
         let updatedMoonPhase = advanceMoonPhase()
         
         moonPhase = updatedMoonPhase
@@ -535,9 +574,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let fadeInOutStars = CAKeyframeAnimation(keyPath: "opacity")
         
         fadeInOutStars.values = [1,0,0,1]
-        fadeInOutStars.keyTimes = [0,NSNumber(floatLiteral: 5/60),NSNumber(floatLiteral: 23/60),NSNumber(floatLiteral: 28/60)]
+        fadeInOutStars.keyTimes = [0,NSNumber(floatLiteral: 5/60),NSNumber(floatLiteral: 25/60),NSNumber(floatLiteral: 30/60)]
         
-        fadeInOutStars.duration = 60
+        fadeInOutStars.duration = 60 * timerMult
         
         constellationBR.layer.add(fadeInOutStars, forKey: "opacity")
         constellationTR.layer.add(fadeInOutStars, forKey: "opacity")
