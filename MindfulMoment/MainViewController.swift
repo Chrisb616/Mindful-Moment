@@ -125,11 +125,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     let oceanGradient = CAGradientLayer()
     
     func setUpGradients() {
-        
-        let bright = UIColor.themeTealAccent1.cgColor
+
         let dark = UIColor.nightTeal.cgColor
         
-        skyGradient.colors = [dark, dark, bright, bright, bright, dark, dark]
+        skyGradient.colors = [dark, dark, dark, dark, dark, dark, dark]
         skyGradient.locations = [0,1,1,1,1,1,1]
         skyGradient.startPoint = CGPoint(x: -1, y: 0)
         skyGradient.endPoint = CGPoint(x: 2, y: 0)
@@ -182,7 +181,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let duskColorKeyFrame = [dark,dark,dawnOrange,dawnOrange,dawnOrange,twilight,dark]
         
         skyColorAnimation.values = [startColorKeyFrame,dawnColorKeyFrame,morningColorKeyFrame,noonColorKeyFrame,afternoonColorKeyFrame,duskColorKeyFrame,startColorKeyFrame]
-        skyColorAnimation.keyTimes = [0,0.1,0.25,0.5,0.7,0.9,1]
+        skyColorAnimation.keyTimes = [0,0.1,0.25,0.5,0.75,0.9,1]
         skyColorAnimation.duration = 30 * timerMult
         skyGradient.add(skyColorAnimation, forKey: "colors")
         print("Finished Sky Animation")
@@ -345,9 +344,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             })
         })
         
-        
+        UIApplication.shared.isIdleTimerDisabled = true
     }
     func endTimer() {
+        resetViews()
         timer.invalidate()
         endTime = Date()
         secondsInTime = 0
@@ -359,7 +359,34 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 self.timerLabel.alpha = 0
             })
         })
+        
+        UIApplication.shared.isIdleTimerDisabled = false
     }
+    
+    func resetViews() {
+        let resetSkyColors = CABasicAnimation(keyPath: "colors")
+        
+        let dark = UIColor.nightTeal
+        
+        resetSkyColors.toValue = [dark, dark, dark, dark, dark, dark, dark]
+        resetSkyColors.duration = 3
+        
+        skyGradient.add(resetSkyColors, forKey: "colors")
+        
+        let resetStarAlpha = CABasicAnimation(keyPath: "opacity")
+        
+        resetStarAlpha.toValue = 1
+        resetStarAlpha.duration = 3
+        
+        constellationTR.layer.add(resetStarAlpha, forKey: "opacity")
+        constellationBR.layer.add(resetStarAlpha, forKey: "opacity")
+        constellationTL.layer.add(resetStarAlpha, forKey: "opacity")
+        constellationBL.layer.add(resetStarAlpha, forKey: "opacity")
+        
+        
+        oceanGradient.removeAllAnimations()
+    }
+    
     func updateTime(_ sender: Timer) {
         secondsInTime += 1
         timerLabel.text = secondsInTime.convertedToTime
@@ -412,11 +439,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return cell
     }
     
+    let sun = SunView()
+    
     func animateSun() {
         animateSkyGradient()
         animateOceanGradient()
         
-        let sun = SunView()
         
         self.view.addSubview(sun)
         
@@ -440,13 +468,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
     }
     
+    let moon = MoonView()
+    
     func animateMoon() {
         let updatedMoonPhase = advanceMoonPhase()
         
         moonPhase = updatedMoonPhase
         
         
-        let moon = MoonView()
         
         self.view.addSubview(moon)
         
@@ -482,44 +511,79 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
     func initialAnimateStars() {
-        UIView.animate(withDuration: 5 * timerMult, animations: {
-            self.constellationTR.alpha = 0
-            self.constellationTL.alpha = 0
-            self.constellationBL.alpha = 0
-            self.constellationBR.alpha = 0
-        }) { (finished) in
-            self.constellationTR.alpha = 0
-            self.constellationTL.alpha = 0
-            self.constellationBL.alpha = 0
-            self.constellationBR.alpha = 0
-        }
+        let fadeOutStars = CABasicAnimation(keyPath: "opacity")
         
+        fadeOutStars.fromValue = 1
+        fadeOutStars.toValue = 0
+        fadeOutStars.duration = 5 * timerMult
+        
+        constellationBL.layer.add(fadeOutStars, forKey: "opacity")
+        constellationBR.layer.add(fadeOutStars, forKey: "opacity")
+        constellationTL.layer.add(fadeOutStars, forKey: "opacity")
+        constellationTR.layer.add(fadeOutStars, forKey: "opacity")
+        
+        Timer.scheduledTimer(withTimeInterval: 5 * timerMult, repeats: false) { (timer) in
+            self.constellationTR.layer.opacity = 0
+            self.constellationTL.layer.opacity = 0
+            self.constellationBL.layer.opacity = 0
+            self.constellationBR.layer.opacity = 0
+            print("Faded")
+        }
     }
+    
+    func animateStars() {
+        let fadeInOutStars = CAKeyframeAnimation(keyPath: "opacity")
+        
+        fadeInOutStars.values = [1,0,0,1]
+        fadeInOutStars.keyTimes = [0,NSNumber(floatLiteral: 5/60),NSNumber(floatLiteral: 23/60),NSNumber(floatLiteral: 28/60)]
+        
+        fadeInOutStars.duration = 60
+        
+        constellationBR.layer.add(fadeInOutStars, forKey: "opacity")
+        constellationTR.layer.add(fadeInOutStars, forKey: "opacity")
+        constellationBL.layer.add(fadeInOutStars, forKey: "opacity")
+        constellationTL.layer.add(fadeInOutStars, forKey: "opacity")
+    }
+    
     func fadeOutStars() {
-        UIView.animate(withDuration: 5 * timerMult, delay: 5, animations: {
-            self.constellationTR.alpha = 0
-            self.constellationTL.alpha = 0
-            self.constellationBL.alpha = 0
-            self.constellationBR.alpha = 0
-        }) { (finished) in
-            self.constellationTR.alpha = 0
-            self.constellationTL.alpha = 0
-            self.constellationBL.alpha = 0
-            self.constellationBR.alpha = 0
+        let fadeOutStars = CABasicAnimation(keyPath: "opacity")
+        
+        fadeOutStars.fromValue = 1
+        fadeOutStars.toValue = 0
+        fadeOutStars.duration = 5 * timerMult
+        
+        constellationBL.layer.add(fadeOutStars, forKey: "opacity")
+        constellationBR.layer.add(fadeOutStars, forKey: "opacity")
+        constellationTL.layer.add(fadeOutStars, forKey: "opacity")
+        constellationTR.layer.add(fadeOutStars, forKey: "opacity")
+        
+        Timer.scheduledTimer(withTimeInterval: 4.9 * timerMult, repeats: false) { (timer) in
+            self.constellationTR.layer.opacity = 0
+            self.constellationTL.layer.opacity = 0
+            self.constellationBL.layer.opacity = 0
+            self.constellationBR.layer.opacity = 0
+            print("Faded")
         }
     }
     
     func fadeInStars() {
-        UIView.animate(withDuration: 5 * timerMult, animations: {
-            self.constellationTR.alpha = 1
-            self.constellationTL.alpha = 1
-            self.constellationBL.alpha = 1
-            self.constellationBR.alpha = 1
-        }) { (finished) in
-            self.constellationTR.alpha = 1
-            self.constellationTL.alpha = 1
-            self.constellationBL.alpha = 1
-            self.constellationBR.alpha = 1
+        let fadeInStars = CABasicAnimation(keyPath: "opacity")
+        
+        fadeInStars.fromValue = 0
+        fadeInStars.toValue = 1
+        fadeInStars.duration = 5 * timerMult
+        
+        constellationBL.layer.add(fadeInStars, forKey: "opacity")
+        constellationBR.layer.add(fadeInStars, forKey: "opacity")
+        constellationTL.layer.add(fadeInStars, forKey: "opacity")
+        constellationTR.layer.add(fadeInStars, forKey: "opacity")
+        
+        Timer.scheduledTimer(withTimeInterval: 4.9 * timerMult, repeats: false) { (timer) in
+            self.constellationTR.layer.opacity = 1
+            self.constellationTL.layer.opacity = 1
+            self.constellationBL.layer.opacity = 1
+            self.constellationBR.layer.opacity = 1
+            print("Faded")
         }
     }
 }
