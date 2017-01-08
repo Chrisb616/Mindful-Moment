@@ -505,14 +505,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
     }
     
-    let moon = MoonView()
+    var moon = MoonView()
     
     func animateMoon() {
+        moon = MoonView()
+        
         moon.layer.opacity = 1
         
         let updatedMoonPhase = advanceMoonPhase()
         
         moonPhase = updatedMoonPhase
+        print(moonPhase)
         
         
         
