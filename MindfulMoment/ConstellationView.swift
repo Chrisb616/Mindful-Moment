@@ -43,7 +43,7 @@ class ConstellationView: UIView {
         
         let randomPercentSize: CGFloat = CGFloat(arc4random_uniform(150))/100
         
-        newStar.frame = CGRect(x: self.frame.width / 2, y: self.frame.height / 2, width: self.frame.width * 0.1 * randomPercentSize, height: self.frame.width * 0.1 * randomPercentSize)
+        newStar.frame = CGRect(x: self.frame.width / 2, y: self.frame.height / 2, width: self.frame.width * 0.05 * randomPercentSize, height: self.frame.width * 0.05 * randomPercentSize)
         
         starViews.append(newStar)
         
@@ -77,8 +77,8 @@ class ConstellationView: UIView {
         
         newStar.frame = CGRect(x: referenceStar.frame.origin.x,
                                y: referenceStar.frame.origin.y,
-                               width: self.frame.width * 0.1 * randomPercentSize,
-                               height: self.frame.width * 0.1 * randomPercentSize)
+                               width: self.frame.width * 0.035 * randomPercentSize,
+                               height: self.frame.width * 0.035 * randomPercentSize)
         
         newStar.center.x += randomXOffset
         newStar.center.y += randomYOffset
@@ -101,8 +101,8 @@ class ConstellationView: UIView {
 
     
     var numberOfStars: Int {
-        let random = Int(arc4random_uniform(5))
+        let random = Int(arc4random_uniform(25))
         
-        return random + 10
+        return random + 100
     }
 }
