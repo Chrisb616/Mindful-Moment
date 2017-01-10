@@ -78,11 +78,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         self.view.addSubview(constellationBL)
         self.view.addSubview(constellationBR)
         
-//        constellationTL.alpha = 0
-//        constellationTR.alpha = 0
-//        constellationBL.alpha = 0
-//        constellationBR.alpha = 0
-        
         constellationTL.frame = CGRect(x: 0, y: 0, width: self.view.frame.width / 2, height: self.view.frame.width / 2)
         constellationTR.frame = CGRect(x: self.view.frame.width / 2, y: 0, width: self.view.frame.width / 2, height: self.view.frame.width / 2)
         constellationBL.frame = CGRect(x: 0, y: self.view.frame.width / 2, width: self.view.frame.width / 2, height: self.view.frame.width / 2)
@@ -157,8 +152,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let duskKeyframe = [0,0,0,0,0,0.5,1]
         let endKeyframe = [0,0,0,0,0,0,1]
         
-        skyAnimation.values = [startKeyframe,dawnKeyframe,noonKeyframe,duskKeyframe,endKeyframe]
-        skyAnimation.keyTimes = [0,0.1,0.5,0.95,1]
+        skyAnimation.values = [startKeyframe,dawnKeyframe,noonKeyframe,noonKeyframe,duskKeyframe,endKeyframe]
+        skyAnimation.keyTimes = [0,0.1,0.3,0.7,0.95,1]
         skyAnimation.duration = 30 * timerMult
         skyGradient.add(skyAnimation, forKey: "locations")
         
@@ -325,7 +320,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
     }
     
-    let timerMult: Double = 1 
+    let timerMult: Double = 10
     
     func startTimer() {
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
