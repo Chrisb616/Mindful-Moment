@@ -10,19 +10,25 @@ import UIKit
 
 class TimerViewController: UIViewController {
     
+    //MARK: - Initialization
     static var instanceFromNib: TimerViewController {
         return TimerViewController(nibName: "TimerViewController", bundle: Bundle.main)
     }
 
+    //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        print("Memory warning in TimerViewController")
+    }
+    
+    //MARK: - Format
+    func formatFromNib() {
+        
     }
     
 }

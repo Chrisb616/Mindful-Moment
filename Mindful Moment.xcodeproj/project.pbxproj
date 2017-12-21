@@ -26,6 +26,7 @@
 		135AC6CF1FEB123100F8D3C8 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 135AC6CD1FEB123100F8D3C8 /* SettingsViewController.xib */; };
 		135AC6D21FEB144100F8D3C8 /* AppInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135AC6D01FEB144100F8D3C8 /* AppInfoViewController.swift */; };
 		135AC6D31FEB144100F8D3C8 /* AppInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 135AC6D11FEB144100F8D3C8 /* AppInfoViewController.xib */; };
+		13B366F81FEC452A003B1AF0 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B366F71FEC452A003B1AF0 /* UIButton.swift */; };
 		13EA48211FE9A9B6002D66C8 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EA48201FE9A9B6002D66C8 /* NotificationManager.swift */; };
 		13EA48241FEADCCA002D66C8 /* BackgroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EA48221FEADCCA002D66C8 /* BackgroundViewController.swift */; };
 		13EA48251FEADCCA002D66C8 /* BackgroundViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13EA48231FEADCCA002D66C8 /* BackgroundViewController.xib */; };
@@ -67,6 +68,7 @@
 		135AC6CD1FEB123100F8D3C8 /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		135AC6D01FEB144100F8D3C8 /* AppInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoViewController.swift; sourceTree = "<group>"; };
 		135AC6D11FEB144100F8D3C8 /* AppInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppInfoViewController.xib; sourceTree = "<group>"; };
+		13B366F71FEC452A003B1AF0 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		13EA48201FE9A9B6002D66C8 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		13EA48221FEADCCA002D66C8 /* BackgroundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundViewController.swift; sourceTree = "<group>"; };
 		13EA48231FEADCCA002D66C8 /* BackgroundViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BackgroundViewController.xib; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 		133BE7941FE8221300FA3767 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				13B366F61FEC4518003B1AF0 /* View Extensions */,
 				133BE79D1FE824F300FA3767 /* View Controllers */,
 				133BE7711FE821A400FA3767 /* AppDelegate.swift */,
 				133BE77B1FE821A400FA3767 /* Assets.xcassets */,
@@ -228,6 +231,14 @@
 				133BE7A31FE8269B00FA3767 /* HealthKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		13B366F61FEC4518003B1AF0 /* View Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				13B366F71FEC452A003B1AF0 /* UIButton.swift */,
+			);
+			path = "View Extensions";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -354,6 +365,7 @@
 				133BE7AA1FE864BE00FA3767 /* MeditationTimer.swift in Sources */,
 				13EA48211FE9A9B6002D66C8 /* NotificationManager.swift in Sources */,
 				133BE7A81FE841E300FA3767 /* SessionManager.swift in Sources */,
+				13B366F81FEC452A003B1AF0 /* UIButton.swift in Sources */,
 				133BE7A01FE825E200FA3767 /* HealthManager.swift in Sources */,
 				135AC6CE1FEB123100F8D3C8 /* SettingsViewController.swift in Sources */,
 			);

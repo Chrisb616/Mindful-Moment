@@ -19,11 +19,17 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        formatFromNib()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        print("Memory warning in SettingsViewController")
+    }
+    
+    //MARK: - Format
+    func formatFromNib() {
+        backButton.standardFormat()
     }
     
     //MARK: - IB Actions

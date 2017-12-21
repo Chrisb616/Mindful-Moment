@@ -26,7 +26,6 @@ class MenuViewController: UIViewController {
         super.viewDidLoad()
         
         formatFromNib()
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,21 +36,10 @@ class MenuViewController: UIViewController {
     
     //MARK: - Formatting
     func formatFromNib() {
-        startButton.layer.cornerRadius = 5
-        startButton.layer.borderWidth = 3
-        startButton.layer.borderColor = Colors.purple.cgColor
-        
-        sessionsButton.layer.cornerRadius = 5
-        sessionsButton.layer.borderWidth = 3
-        sessionsButton.layer.borderColor = Colors.purple.cgColor
-        
-        settingsButton.layer.cornerRadius = 5
-        settingsButton.layer.borderWidth = 3
-        settingsButton.layer.borderColor = Colors.purple.cgColor
-        
-        appInfoButton.layer.cornerRadius = 5
-        appInfoButton.layer.borderWidth = 3
-        appInfoButton.layer.borderColor = Colors.purple.cgColor
+        startButton.standardFormat()
+        sessionsButton.standardFormat()
+        settingsButton.standardFormat()
+        appInfoButton.standardFormat()
     }
     
     //MARK: - IBActions
