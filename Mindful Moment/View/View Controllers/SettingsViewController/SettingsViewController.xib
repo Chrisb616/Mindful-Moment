@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="AvenirNext.ttc">
+            <string>AvenirNext-Bold</string>
+            <string>AvenirNext-Heavy</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingsViewController" customModule="Mindful_Moment" customModuleProvider="target">
+            <connections>
+                <outlet property="backButton" destination="86O-J9-6oi" id="zmf-HL-eOw"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1id-W0-nb3">
+                    <rect key="frame" x="20" y="40" width="335" height="41"/>
+                    <fontDescription key="fontDescription" name="AvenirNext-Heavy" family="Avenir Next" pointSize="30"/>
+                    <color key="textColor" red="0.42306166890000002" green="0.32458174229999998" blue="0.49806517360000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="86O-J9-6oi">
+                    <rect key="frame" x="20" y="607" width="335" height="40"/>
+                    <color key="backgroundColor" red="0.57387429479999996" green="0.79020917420000003" blue="0.68625622990000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="HDx-QW-Asy"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="20"/>
+                    <color key="tintColor" red="0.42306166887283325" green="0.32458174228668213" blue="0.49806517362594604" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <state key="normal" title="Back"/>
+                    <connections>
+                        <action selector="backButtonTouchUpInside:" destination="-1" eventType="touchUpInside" id="WCk-k6-qRN"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="1id-W0-nb3" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="3O2-Lx-QgN"/>
+                <constraint firstItem="86O-J9-6oi" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="4We-we-LvE"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="86O-J9-6oi" secondAttribute="bottom" constant="20" id="Kvv-nj-3ke"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="86O-J9-6oi" secondAttribute="trailing" constant="20" id="Qs9-8f-bCV"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="1id-W0-nb3" secondAttribute="trailing" constant="20" id="SCj-4U-NYg"/>
+                <constraint firstItem="1id-W0-nb3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="YgG-NP-oVi"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+        </view>
+    </objects>
+</document>

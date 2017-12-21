@@ -1,0 +1,596 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		133BE7721FE821A400FA3767 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133BE7711FE821A400FA3767 /* AppDelegate.swift */; };
+		133BE77C1FE821A400FA3767 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 133BE77B1FE821A400FA3767 /* Assets.xcassets */; };
+		133BE77F1FE821A400FA3767 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 133BE77D1FE821A400FA3767 /* LaunchScreen.storyboard */; };
+		133BE78A1FE821A400FA3767 /* Mindful_MomentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133BE7891FE821A400FA3767 /* Mindful_MomentTests.swift */; };
+		133BE79B1FE822A600FA3767 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133BE7991FE822A600FA3767 /* MenuViewController.swift */; };
+		133BE79C1FE822A600FA3767 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 133BE79A1FE822A600FA3767 /* MenuViewController.xib */; };
+		133BE7A01FE825E200FA3767 /* HealthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133BE79F1FE825E200FA3767 /* HealthManager.swift */; };
+		133BE7A41FE8269B00FA3767 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 133BE7A31FE8269B00FA3767 /* HealthKit.framework */; };
+		133BE7A61FE840BC00FA3767 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133BE7A51FE840BC00FA3767 /* Session.swift */; };
+		133BE7A81FE841E300FA3767 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133BE7A71FE841E300FA3767 /* SessionManager.swift */; };
+		133BE7AA1FE864BE00FA3767 /* MeditationTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133BE7A91FE864BE00FA3767 /* MeditationTimer.swift */; };
+		135AC6C41FEB03F000F8D3C8 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135AC6C21FEB03F000F8D3C8 /* TimerViewController.swift */; };
+		135AC6C51FEB03F000F8D3C8 /* TimerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 135AC6C31FEB03F000F8D3C8 /* TimerViewController.xib */; };
+		135AC6CA1FEB09F000F8D3C8 /* SessionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135AC6C81FEB09F000F8D3C8 /* SessionsViewController.swift */; };
+		135AC6CB1FEB09F000F8D3C8 /* SessionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 135AC6C91FEB09F000F8D3C8 /* SessionsViewController.xib */; };
+		135AC6CE1FEB123100F8D3C8 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135AC6CC1FEB123100F8D3C8 /* SettingsViewController.swift */; };
+		135AC6CF1FEB123100F8D3C8 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 135AC6CD1FEB123100F8D3C8 /* SettingsViewController.xib */; };
+		135AC6D21FEB144100F8D3C8 /* AppInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135AC6D01FEB144100F8D3C8 /* AppInfoViewController.swift */; };
+		135AC6D31FEB144100F8D3C8 /* AppInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 135AC6D11FEB144100F8D3C8 /* AppInfoViewController.xib */; };
+		13EA48211FE9A9B6002D66C8 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EA48201FE9A9B6002D66C8 /* NotificationManager.swift */; };
+		13EA48241FEADCCA002D66C8 /* BackgroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EA48221FEADCCA002D66C8 /* BackgroundViewController.swift */; };
+		13EA48251FEADCCA002D66C8 /* BackgroundViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13EA48231FEADCCA002D66C8 /* BackgroundViewController.xib */; };
+		13EA48291FEAE560002D66C8 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EA48281FEAE560002D66C8 /* Colors.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		133BE7861FE821A400FA3767 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 133BE7661FE821A400FA3767 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 133BE76D1FE821A400FA3767;
+			remoteInfo = "Mindful Moment";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		133BE76E1FE821A400FA3767 /* Mindful Moment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mindful Moment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		133BE7711FE821A400FA3767 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		133BE77B1FE821A400FA3767 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		133BE77E1FE821A400FA3767 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		133BE7801FE821A400FA3767 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		133BE7851FE821A400FA3767 /* Mindful MomentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Mindful MomentTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		133BE7891FE821A400FA3767 /* Mindful_MomentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mindful_MomentTests.swift; sourceTree = "<group>"; };
+		133BE78B1FE821A400FA3767 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		133BE7991FE822A600FA3767 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		133BE79A1FE822A600FA3767 /* MenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
+		133BE79F1FE825E200FA3767 /* HealthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthManager.swift; sourceTree = "<group>"; };
+		133BE7A11FE8269B00FA3767 /* Mindful Moment.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Mindful Moment.entitlements"; sourceTree = "<group>"; };
+		133BE7A31FE8269B00FA3767 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		133BE7A51FE840BC00FA3767 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		133BE7A71FE841E300FA3767 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		133BE7A91FE864BE00FA3767 /* MeditationTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationTimer.swift; sourceTree = "<group>"; };
+		135AC6C21FEB03F000F8D3C8 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
+		135AC6C31FEB03F000F8D3C8 /* TimerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimerViewController.xib; sourceTree = "<group>"; };
+		135AC6C81FEB09F000F8D3C8 /* SessionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionsViewController.swift; sourceTree = "<group>"; };
+		135AC6C91FEB09F000F8D3C8 /* SessionsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SessionsViewController.xib; sourceTree = "<group>"; };
+		135AC6CC1FEB123100F8D3C8 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		135AC6CD1FEB123100F8D3C8 /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
+		135AC6D01FEB144100F8D3C8 /* AppInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoViewController.swift; sourceTree = "<group>"; };
+		135AC6D11FEB144100F8D3C8 /* AppInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppInfoViewController.xib; sourceTree = "<group>"; };
+		13EA48201FE9A9B6002D66C8 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		13EA48221FEADCCA002D66C8 /* BackgroundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundViewController.swift; sourceTree = "<group>"; };
+		13EA48231FEADCCA002D66C8 /* BackgroundViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BackgroundViewController.xib; sourceTree = "<group>"; };
+		13EA48281FEAE560002D66C8 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		133BE76B1FE821A400FA3767 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				133BE7A41FE8269B00FA3767 /* HealthKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		133BE7821FE821A400FA3767 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		133377B21FEC420E0056E127 /* BackgroundViewController */ = {
+			isa = PBXGroup;
+			children = (
+				13EA48221FEADCCA002D66C8 /* BackgroundViewController.swift */,
+				13EA48231FEADCCA002D66C8 /* BackgroundViewController.xib */,
+			);
+			path = BackgroundViewController;
+			sourceTree = "<group>";
+		};
+		133377B31FEC42170056E127 /* MenuViewController */ = {
+			isa = PBXGroup;
+			children = (
+				133BE7991FE822A600FA3767 /* MenuViewController.swift */,
+				133BE79A1FE822A600FA3767 /* MenuViewController.xib */,
+			);
+			path = MenuViewController;
+			sourceTree = "<group>";
+		};
+		133377B41FEC421E0056E127 /* TimerViewController */ = {
+			isa = PBXGroup;
+			children = (
+				135AC6C21FEB03F000F8D3C8 /* TimerViewController.swift */,
+				135AC6C31FEB03F000F8D3C8 /* TimerViewController.xib */,
+			);
+			path = TimerViewController;
+			sourceTree = "<group>";
+		};
+		133377B51FEC42270056E127 /* SessionsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				135AC6C81FEB09F000F8D3C8 /* SessionsViewController.swift */,
+				135AC6C91FEB09F000F8D3C8 /* SessionsViewController.xib */,
+			);
+			path = SessionsViewController;
+			sourceTree = "<group>";
+		};
+		133377B61FEC42300056E127 /* SettingsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				135AC6CC1FEB123100F8D3C8 /* SettingsViewController.swift */,
+				135AC6CD1FEB123100F8D3C8 /* SettingsViewController.xib */,
+			);
+			path = SettingsViewController;
+			sourceTree = "<group>";
+		};
+		133377B71FEC42380056E127 /* AppInfoViewController */ = {
+			isa = PBXGroup;
+			children = (
+				135AC6D01FEB144100F8D3C8 /* AppInfoViewController.swift */,
+				135AC6D11FEB144100F8D3C8 /* AppInfoViewController.xib */,
+			);
+			path = AppInfoViewController;
+			sourceTree = "<group>";
+		};
+		133BE7651FE821A400FA3767 = {
+			isa = PBXGroup;
+			children = (
+				133BE7701FE821A400FA3767 /* Mindful Moment */,
+				133BE7881FE821A400FA3767 /* Mindful MomentTests */,
+				133BE76F1FE821A400FA3767 /* Products */,
+				133BE7A21FE8269B00FA3767 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		133BE76F1FE821A400FA3767 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				133BE76E1FE821A400FA3767 /* Mindful Moment.app */,
+				133BE7851FE821A400FA3767 /* Mindful MomentTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		133BE7701FE821A400FA3767 /* Mindful Moment */ = {
+			isa = PBXGroup;
+			children = (
+				133BE7A11FE8269B00FA3767 /* Mindful Moment.entitlements */,
+				133BE7941FE8221300FA3767 /* View */,
+				133BE79E1FE8251D00FA3767 /* Model */,
+				133BE7801FE821A400FA3767 /* Info.plist */,
+			);
+			path = "Mindful Moment";
+			sourceTree = "<group>";
+		};
+		133BE7881FE821A400FA3767 /* Mindful MomentTests */ = {
+			isa = PBXGroup;
+			children = (
+				133BE7891FE821A400FA3767 /* Mindful_MomentTests.swift */,
+				133BE78B1FE821A400FA3767 /* Info.plist */,
+			);
+			path = "Mindful MomentTests";
+			sourceTree = "<group>";
+		};
+		133BE7941FE8221300FA3767 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				133BE79D1FE824F300FA3767 /* View Controllers */,
+				133BE7711FE821A400FA3767 /* AppDelegate.swift */,
+				133BE77B1FE821A400FA3767 /* Assets.xcassets */,
+				133BE77D1FE821A400FA3767 /* LaunchScreen.storyboard */,
+				13EA48281FEAE560002D66C8 /* Colors.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		133BE79D1FE824F300FA3767 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				133377B21FEC420E0056E127 /* BackgroundViewController */,
+				133377B31FEC42170056E127 /* MenuViewController */,
+				133377B41FEC421E0056E127 /* TimerViewController */,
+				133377B51FEC42270056E127 /* SessionsViewController */,
+				133377B61FEC42300056E127 /* SettingsViewController */,
+				133377B71FEC42380056E127 /* AppInfoViewController */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		133BE79E1FE8251D00FA3767 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				133BE79F1FE825E200FA3767 /* HealthManager.swift */,
+				133BE7A51FE840BC00FA3767 /* Session.swift */,
+				133BE7A71FE841E300FA3767 /* SessionManager.swift */,
+				133BE7A91FE864BE00FA3767 /* MeditationTimer.swift */,
+				13EA48201FE9A9B6002D66C8 /* NotificationManager.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		133BE7A21FE8269B00FA3767 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				133BE7A31FE8269B00FA3767 /* HealthKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		133BE76D1FE821A400FA3767 /* Mindful Moment */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 133BE78E1FE821A400FA3767 /* Build configuration list for PBXNativeTarget "Mindful Moment" */;
+			buildPhases = (
+				133BE76A1FE821A400FA3767 /* Sources */,
+				133BE76B1FE821A400FA3767 /* Frameworks */,
+				133BE76C1FE821A400FA3767 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Mindful Moment";
+			productName = "Mindful Moment";
+			productReference = 133BE76E1FE821A400FA3767 /* Mindful Moment.app */;
+			productType = "com.apple.product-type.application";
+		};
+		133BE7841FE821A400FA3767 /* Mindful MomentTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 133BE7911FE821A400FA3767 /* Build configuration list for PBXNativeTarget "Mindful MomentTests" */;
+			buildPhases = (
+				133BE7811FE821A400FA3767 /* Sources */,
+				133BE7821FE821A400FA3767 /* Frameworks */,
+				133BE7831FE821A400FA3767 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				133BE7871FE821A400FA3767 /* PBXTargetDependency */,
+			);
+			name = "Mindful MomentTests";
+			productName = "Mindful MomentTests";
+			productReference = 133BE7851FE821A400FA3767 /* Mindful MomentTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		133BE7661FE821A400FA3767 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Christopher Boynton";
+				TargetAttributes = {
+					133BE76D1FE821A400FA3767 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+						};
+					};
+					133BE7841FE821A400FA3767 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 133BE76D1FE821A400FA3767;
+					};
+				};
+			};
+			buildConfigurationList = 133BE7691FE821A400FA3767 /* Build configuration list for PBXProject "Mindful Moment" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 133BE7651FE821A400FA3767;
+			productRefGroup = 133BE76F1FE821A400FA3767 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				133BE76D1FE821A400FA3767 /* Mindful Moment */,
+				133BE7841FE821A400FA3767 /* Mindful MomentTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		133BE76C1FE821A400FA3767 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13EA48251FEADCCA002D66C8 /* BackgroundViewController.xib in Resources */,
+				135AC6CB1FEB09F000F8D3C8 /* SessionsViewController.xib in Resources */,
+				133BE77F1FE821A400FA3767 /* LaunchScreen.storyboard in Resources */,
+				133BE79C1FE822A600FA3767 /* MenuViewController.xib in Resources */,
+				135AC6C51FEB03F000F8D3C8 /* TimerViewController.xib in Resources */,
+				135AC6CF1FEB123100F8D3C8 /* SettingsViewController.xib in Resources */,
+				135AC6D31FEB144100F8D3C8 /* AppInfoViewController.xib in Resources */,
+				133BE77C1FE821A400FA3767 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		133BE7831FE821A400FA3767 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		133BE76A1FE821A400FA3767 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				135AC6C41FEB03F000F8D3C8 /* TimerViewController.swift in Sources */,
+				13EA48241FEADCCA002D66C8 /* BackgroundViewController.swift in Sources */,
+				13EA48291FEAE560002D66C8 /* Colors.swift in Sources */,
+				135AC6D21FEB144100F8D3C8 /* AppInfoViewController.swift in Sources */,
+				133BE7A61FE840BC00FA3767 /* Session.swift in Sources */,
+				135AC6CA1FEB09F000F8D3C8 /* SessionsViewController.swift in Sources */,
+				133BE79B1FE822A600FA3767 /* MenuViewController.swift in Sources */,
+				133BE7721FE821A400FA3767 /* AppDelegate.swift in Sources */,
+				133BE7AA1FE864BE00FA3767 /* MeditationTimer.swift in Sources */,
+				13EA48211FE9A9B6002D66C8 /* NotificationManager.swift in Sources */,
+				133BE7A81FE841E300FA3767 /* SessionManager.swift in Sources */,
+				133BE7A01FE825E200FA3767 /* HealthManager.swift in Sources */,
+				135AC6CE1FEB123100F8D3C8 /* SettingsViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		133BE7811FE821A400FA3767 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				133BE78A1FE821A400FA3767 /* Mindful_MomentTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		133BE7871FE821A400FA3767 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 133BE76D1FE821A400FA3767 /* Mindful Moment */;
+			targetProxy = 133BE7861FE821A400FA3767 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		133BE77D1FE821A400FA3767 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				133BE77E1FE821A400FA3767 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		133BE78C1FE821A400FA3767 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		133BE78D1FE821A400FA3767 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		133BE78F1FE821A400FA3767 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Mindful Moment/Mindful Moment.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6X2L9APT92;
+				INFOPLIST_FILE = "Mindful Moment/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "self.Mindful-Moment";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		133BE7901FE821A400FA3767 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Mindful Moment/Mindful Moment.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6X2L9APT92;
+				INFOPLIST_FILE = "Mindful Moment/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "self.Mindful-Moment";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		133BE7921FE821A400FA3767 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Mindful MomentTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "self.Mindful-MomentTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mindful Moment.app/Mindful Moment";
+			};
+			name = Debug;
+		};
+		133BE7931FE821A400FA3767 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Mindful MomentTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "self.Mindful-MomentTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mindful Moment.app/Mindful Moment";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		133BE7691FE821A400FA3767 /* Build configuration list for PBXProject "Mindful Moment" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				133BE78C1FE821A400FA3767 /* Debug */,
+				133BE78D1FE821A400FA3767 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		133BE78E1FE821A400FA3767 /* Build configuration list for PBXNativeTarget "Mindful Moment" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				133BE78F1FE821A400FA3767 /* Debug */,
+				133BE7901FE821A400FA3767 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		133BE7911FE821A400FA3767 /* Build configuration list for PBXNativeTarget "Mindful MomentTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				133BE7921FE821A400FA3767 /* Debug */,
+				133BE7931FE821A400FA3767 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 133BE7661FE821A400FA3767 /* Project object */;
+}
