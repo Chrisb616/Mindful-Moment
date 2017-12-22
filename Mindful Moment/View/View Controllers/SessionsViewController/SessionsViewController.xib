@@ -19,6 +19,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SessionsViewController" customModule="Mindful_Moment" customModuleProvider="target">
             <connections>
                 <outlet property="backButton" destination="22t-VJ-kPH" id="quR-10-vL6"/>
+                <outlet property="sessionsTableView" destination="YBv-Qy-F8x" id="kcV-gX-Pss"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

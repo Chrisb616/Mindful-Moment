@@ -12,6 +12,7 @@ class SessionsViewController: UIViewController {
     
     //MARK: - Outlets
     @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var sessionsTableView: UITableView!
     
     //MARK: - Initialization
     static var instanceFromNib: SessionsViewController {
@@ -33,6 +34,14 @@ class SessionsViewController: UIViewController {
     //MARK: - Format
     func formatFromNib() {
         backButton.standardFormat()
+        
+        formatTableView()
+    }
+    
+    func formatTableView() {
+        sessionsTableView.dataSource = self
+        
+        sessionsTableView.register(SessionsTableViewCell.self, forCellReuseIdentifier: "SessionCell")
     }
     
     //MARK: - IB Actions
@@ -41,5 +50,24 @@ class SessionsViewController: UIViewController {
             NotificationManager.instance.postShowMenuViewControllerNotification()
         }
     }
+    
+}
+
+extension SessionsViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return SessionManager.instance.storedSessions.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let session = SessionManager.instance.storedSessions[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SessionCell") as? SessionsTableViewCell
+        
+        return cell!
+    }
+    
+    
+    
     
 }

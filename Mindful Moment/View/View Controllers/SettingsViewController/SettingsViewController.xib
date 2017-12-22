@@ -34,10 +34,10 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="86O-J9-6oi">
-                    <rect key="frame" x="20" y="607" width="335" height="40"/>
+                    <rect key="frame" x="20" y="587" width="335" height="60"/>
                     <color key="backgroundColor" red="0.57387429479999996" green="0.79020917420000003" blue="0.68625622990000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="40" id="HDx-QW-Asy"/>
+                        <constraint firstAttribute="height" constant="60" id="HDx-QW-Asy"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="20"/>
                     <color key="tintColor" red="0.42306166887283325" green="0.32458174228668213" blue="0.49806517362594604" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

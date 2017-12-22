@@ -19,9 +19,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MenuViewController" customModule="Mindful_Moment" customModuleProvider="target">
             <connections>
                 <outlet property="appInfoButton" destination="IbA-xt-yWx" id="v5m-ex-E29"/>
+                <outlet property="meditateButton" destination="sTZ-vs-21I" id="zvh-3T-gGU"/>
                 <outlet property="sessionsButton" destination="oIK-Wa-M6C" id="Fvl-Wa-Pho"/>
                 <outlet property="settingsButton" destination="7dQ-V5-VQu" id="vn0-iO-s8C"/>
-                <outlet property="startButton" destination="sTZ-vs-21I" id="9Wa-37-HOB"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -85,11 +85,11 @@
                         <constraint firstAttribute="height" constant="60" id="yP4-5c-ilX"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="AvenirNext-Heavy" family="Avenir Next" pointSize="30"/>
-                    <state key="normal" title="Start">
+                    <state key="normal" title="Meditate">
                         <color key="titleColor" red="0.42306166890000002" green="0.32458174229999998" blue="0.49806517360000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </state>
                     <connections>
-                        <action selector="startButtonTouchUpInside:" destination="-1" eventType="touchUpInside" id="inv-dB-deU"/>
+                        <action selector="meditateButtonTouchUpInside:" destination="-1" eventType="touchUpInside" id="trg-Mx-Cma"/>
                     </connections>
                 </button>
             </subviews>

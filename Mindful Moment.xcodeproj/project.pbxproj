@@ -18,6 +18,8 @@
 		133BE7A61FE840BC00FA3767 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133BE7A51FE840BC00FA3767 /* Session.swift */; };
 		133BE7A81FE841E300FA3767 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133BE7A71FE841E300FA3767 /* SessionManager.swift */; };
 		133BE7AA1FE864BE00FA3767 /* MeditationTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133BE7A91FE864BE00FA3767 /* MeditationTimer.swift */; };
+		133ED0001FED5FAE00BC2595 /* SessionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133ECFFE1FED5FAE00BC2595 /* SessionsTableViewCell.swift */; };
+		133ED0011FED5FAE00BC2595 /* SessionsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 133ECFFF1FED5FAE00BC2595 /* SessionsTableViewCell.xib */; };
 		135AC6C41FEB03F000F8D3C8 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135AC6C21FEB03F000F8D3C8 /* TimerViewController.swift */; };
 		135AC6C51FEB03F000F8D3C8 /* TimerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 135AC6C31FEB03F000F8D3C8 /* TimerViewController.xib */; };
 		135AC6CA1FEB09F000F8D3C8 /* SessionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135AC6C81FEB09F000F8D3C8 /* SessionsViewController.swift */; };
@@ -60,6 +62,8 @@
 		133BE7A51FE840BC00FA3767 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		133BE7A71FE841E300FA3767 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		133BE7A91FE864BE00FA3767 /* MeditationTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationTimer.swift; sourceTree = "<group>"; };
+		133ECFFE1FED5FAE00BC2595 /* SessionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionsTableViewCell.swift; sourceTree = "<group>"; };
+		133ECFFF1FED5FAE00BC2595 /* SessionsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SessionsTableViewCell.xib; sourceTree = "<group>"; };
 		135AC6C21FEB03F000F8D3C8 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		135AC6C31FEB03F000F8D3C8 /* TimerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimerViewController.xib; sourceTree = "<group>"; };
 		135AC6C81FEB09F000F8D3C8 /* SessionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionsViewController.swift; sourceTree = "<group>"; };
@@ -126,6 +130,8 @@
 			children = (
 				135AC6C81FEB09F000F8D3C8 /* SessionsViewController.swift */,
 				135AC6C91FEB09F000F8D3C8 /* SessionsViewController.xib */,
+				133ECFFE1FED5FAE00BC2595 /* SessionsTableViewCell.swift */,
+				133ECFFF1FED5FAE00BC2595 /* SessionsTableViewCell.xib */,
 			);
 			path = SessionsViewController;
 			sourceTree = "<group>";
@@ -331,6 +337,7 @@
 			files = (
 				13EA48251FEADCCA002D66C8 /* BackgroundViewController.xib in Resources */,
 				135AC6CB1FEB09F000F8D3C8 /* SessionsViewController.xib in Resources */,
+				133ED0011FED5FAE00BC2595 /* SessionsTableViewCell.xib in Resources */,
 				133BE77F1FE821A400FA3767 /* LaunchScreen.storyboard in Resources */,
 				133BE79C1FE822A600FA3767 /* MenuViewController.xib in Resources */,
 				135AC6C51FEB03F000F8D3C8 /* TimerViewController.xib in Resources */,
@@ -360,6 +367,7 @@
 				135AC6D21FEB144100F8D3C8 /* AppInfoViewController.swift in Sources */,
 				133BE7A61FE840BC00FA3767 /* Session.swift in Sources */,
 				135AC6CA1FEB09F000F8D3C8 /* SessionsViewController.swift in Sources */,
+				133ED0001FED5FAE00BC2595 /* SessionsTableViewCell.swift in Sources */,
 				133BE79B1FE822A600FA3767 /* MenuViewController.swift in Sources */,
 				133BE7721FE821A400FA3767 /* AppDelegate.swift in Sources */,
 				133BE7AA1FE864BE00FA3767 /* MeditationTimer.swift in Sources */,

@@ -11,7 +11,7 @@ import UIKit
 class MenuViewController: UIViewController {
     
     //MARK: - Outlets
-    @IBOutlet weak var startButton: UIButton!
+    @IBOutlet weak var meditateButton: UIButton!
     @IBOutlet weak var sessionsButton: UIButton!
     @IBOutlet weak var settingsButton: UIButton!
     @IBOutlet weak var appInfoButton: UIButton!
@@ -30,13 +30,13 @@ class MenuViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
         print("Memory warning in MenuViewController")
     }
     
     //MARK: - Formatting
     func formatFromNib() {
-        startButton.standardFormat()
+        meditateButton.standardFormat()
         sessionsButton.standardFormat()
         settingsButton.standardFormat()
         appInfoButton.standardFormat()
@@ -44,21 +44,24 @@ class MenuViewController: UIViewController {
     
     //MARK: - IBActions
     
-    @IBAction func startButtonTouchUpInside(_ sender: Any) {
+    @IBAction func meditateButtonTouchUpInside(_ sender: Any) {
         dismiss(animated: true) {
             NotificationManager.instance.postShowTimerViewControllerNotification()
         }
     }
+    
     @IBAction func sessionsButtonTouchUpInside(_ sender: Any) {
         dismiss(animated: true) {
             NotificationManager.instance.postShowSessionsViewControllerNotification()
         }
     }
+    
     @IBAction func settingsButtonTouchUpInside(_ sender: Any) {
         dismiss(animated: true) {
             NotificationManager.instance.postShowSettingsViewControllerNotification()
         }
     }
+    
     @IBAction func appInfoButtonTouchUpInside(_ sender: Any) {
         dismiss(animated: true) {
             NotificationManager.instance.postShowAppInfoViewControllerNotification()
