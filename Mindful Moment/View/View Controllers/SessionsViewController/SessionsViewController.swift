@@ -61,14 +61,13 @@ extension SessionsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell: SessionsTableViewCell? = tableView.dequeueReusableCell(withIdentifier: SessionsTableViewCell.identifier) as? SessionsTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: SessionsTableViewCell.identifier) as! SessionsTableViewCell
+        let session = SessionManager.instance.storedSessions[indexPath.row]
     
-        cell?.minutesLabel.text = "10 Mins"
+        cell.dateLabel.text = session.startDate.description
+        cell.minutesLabel.text = session.duration.description
         
-        return cell!
+        return cell
     }
-    
-    
-    
-    
+
 }
