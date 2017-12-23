@@ -41,7 +41,7 @@ class SessionsViewController: UIViewController {
     func formatTableView() {
         sessionsTableView.dataSource = self
         
-        sessionsTableView.register(SessionsTableViewCell.self, forCellReuseIdentifier: "SessionCell")
+        sessionsTableView.register(SessionsTableViewCell.nib, forCellReuseIdentifier: SessionsTableViewCell.identifier)
     }
     
     //MARK: - IB Actions
@@ -61,8 +61,9 @@ extension SessionsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let session = SessionManager.instance.storedSessions[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SessionCell") as? SessionsTableViewCell
+        let cell: SessionsTableViewCell? = tableView.dequeueReusableCell(withIdentifier: SessionsTableViewCell.identifier) as? SessionsTableViewCell
+    
+        cell?.minutesLabel.text = "10 Mins"
         
         return cell!
     }

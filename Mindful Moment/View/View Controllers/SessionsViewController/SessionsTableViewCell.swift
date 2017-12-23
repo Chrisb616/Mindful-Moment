@@ -12,6 +12,13 @@ class SessionsTableViewCell: UITableViewCell {
     
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var minutesLabel: UILabel!
+    
+    //MARK: - Static Reference Properties
+    static var nib: UINib {
+        return UINib(nibName: "SessionsTableViewCell", bundle: Bundle.main)
+    }
+    
+    static var identifier = "SessionsTableViewCell"
 
     override func awakeFromNib() {
         super.awakeFromNib()
