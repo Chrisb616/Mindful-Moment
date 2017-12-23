@@ -1,5 +1,5 @@
 //
-//  UIButton.swift
+//  UIView.swift
 //  Mindful Moment
 //
 //  Created by Christopher Boynton on 12/21/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension UIButton {
+extension UIView {
     
     func standardFormat() {
         self.layer.cornerRadius = 5

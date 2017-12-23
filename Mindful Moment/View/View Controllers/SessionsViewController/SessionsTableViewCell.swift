@@ -11,7 +11,10 @@ import UIKit
 class SessionsTableViewCell: UITableViewCell {
     
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var minutesLabel: UILabel!
+    
+    var session: Session!
     
     //MARK: - Static Reference Properties
     static var nib: UINib {
@@ -20,15 +23,17 @@ class SessionsTableViewCell: UITableViewCell {
     
     static var identifier = "SessionsTableViewCell"
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    //MARK: - Formatting
+    func format(for session: Session) {
+        
+        self.session = session
+        
+        dateLabel.text = session.startDate.formatted(as: "MM/dd/yy")
+        timeLabel.text = session.startDate.formatted(as: "hh:mma")
+        minutesLabel.text = session.duration.timeUnitFormat
+        
+        selectionStyle = .none
+        
     }
     
 }

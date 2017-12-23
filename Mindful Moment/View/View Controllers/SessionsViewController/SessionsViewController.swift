@@ -39,8 +39,14 @@ class SessionsViewController: UIViewController {
     }
     
     func formatTableView() {
-        sessionsTableView.dataSource = self
+        sessionsTableView.layer.borderWidth = 2
+        sessionsTableView.layer.borderColor = Colors.purple.cgColor
+        sessionsTableView.layer.cornerRadius = 5
         
+        sessionsTableView.separatorStyle = .none
+        
+        sessionsTableView.dataSource = self
+        sessionsTableView.delegate = self
         sessionsTableView.register(SessionsTableViewCell.nib, forCellReuseIdentifier: SessionsTableViewCell.identifier)
     }
     
@@ -63,11 +69,27 @@ extension SessionsViewController: UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: SessionsTableViewCell.identifier) as! SessionsTableViewCell
         let session = SessionManager.instance.storedSessions[indexPath.row]
-    
-        cell.dateLabel.text = session.startDate.description
-        cell.minutesLabel.text = session.duration.description
+        
+        cell.format(for: session)
         
         return cell
     }
 
+}
+
+extension SessionsViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            SessionManager.instance.storedSessions.remove(at: indexPath.row)
+            
+            let cell = tableView.cellForRow(at: indexPath) as! SessionsTableViewCell
+            let session = cell.session!
+            
+            HealthManager.instance.deleteSessionFromStore(session: session, completion: {
+                
+            })
+            tableView.deleteRows(at: [indexPath], with: .left)
+        }
+    }
 }

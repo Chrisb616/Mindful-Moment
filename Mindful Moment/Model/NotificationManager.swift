@@ -82,4 +82,5 @@ class NotificationManager {
     func postShowAppInfoViewControllerNotification() {
         notificationCenter.post(name: showAppInfoViewControllerName, object: nil)
     }
+
 }

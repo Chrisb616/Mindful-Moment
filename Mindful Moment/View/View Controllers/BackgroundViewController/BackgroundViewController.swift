@@ -74,4 +74,20 @@ class BackgroundViewController: UIViewController {
         appInfo.modalPresentationStyle = .overCurrentContext
         present(appInfo, animated: true, completion: nil)
     }
+    
+    func showAlert(withTitle title: String, message: String, continueAction: (() -> Void)?, cancelAction: (() -> Void)?) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        if let cancelAction = cancelAction {
+            let action = UIAlertAction(title: "Cancel", style: .cancel, handler: { (action) in
+                cancelAction()
+            })
+            alert.addAction(action)
+        }
+        if let continueAction = continueAction {
+            let action = UIAlertAction(title: "Continue", style: .cancel, handler: { (action) in
+                continueAction()
+            })
+            alert.addAction(action)
+        }
+    }
 }

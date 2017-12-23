@@ -28,9 +28,9 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="45" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YBv-Qy-F8x">
-                    <rect key="frame" x="0.0" y="95" width="414" height="541"/>
-                    <color key="backgroundColor" red="0.57387429475784302" green="0.79020917415618896" blue="0.68625622987747192" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YBv-Qy-F8x">
+                    <rect key="frame" x="5" y="95" width="404" height="541"/>
+                    <color key="backgroundColor" red="0.42310473320000003" green="0.32865700129999997" blue="0.49806475639999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <color key="sectionIndexColor" red="0.56987136602401733" green="0.78229457139968872" blue="0.68233555555343628" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
                 </tableView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mindful Minutes Sessions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="21" translatesAutoresizingMaskIntoConstraints="NO" id="Qdm-fI-mg0">
@@ -61,8 +61,8 @@
                 <constraint firstItem="22t-VJ-kPH" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Biy-Pf-wbr"/>
                 <constraint firstItem="22t-VJ-kPH" firstAttribute="top" secondItem="YBv-Qy-F8x" secondAttribute="bottom" constant="20" id="FZB-AN-JAU"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Qdm-fI-mg0" secondAttribute="trailing" constant="20" id="I0s-4J-mJr"/>
-                <constraint firstItem="YBv-Qy-F8x" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="KYU-aV-srf"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="YBv-Qy-F8x" secondAttribute="trailing" id="be9-ET-QHW"/>
+                <constraint firstItem="YBv-Qy-F8x" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="5" id="KYU-aV-srf"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="YBv-Qy-F8x" secondAttribute="trailing" constant="5" id="be9-ET-QHW"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="22t-VJ-kPH" secondAttribute="bottom" constant="20" id="kjz-1Q-fyT"/>
                 <constraint firstItem="Qdm-fI-mg0" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="qTp-NN-xOA"/>
                 <constraint firstItem="Qdm-fI-mg0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="rSk-Sv-QBq"/>
