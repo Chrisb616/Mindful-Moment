@@ -35,6 +35,7 @@
 		13EA48241FEADCCA002D66C8 /* BackgroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EA48221FEADCCA002D66C8 /* BackgroundViewController.swift */; };
 		13EA48251FEADCCA002D66C8 /* BackgroundViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13EA48231FEADCCA002D66C8 /* BackgroundViewController.xib */; };
 		13EA48291FEAE560002D66C8 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EA48281FEAE560002D66C8 /* Colors.swift */; };
+		13F620B01FF411F20090A0DA /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F620AF1FF411F20090A0DA /* UIImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		13EA48221FEADCCA002D66C8 /* BackgroundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundViewController.swift; sourceTree = "<group>"; };
 		13EA48231FEADCCA002D66C8 /* BackgroundViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BackgroundViewController.xib; sourceTree = "<group>"; };
 		13EA48281FEAE560002D66C8 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		13F620AF1FF411F20090A0DA /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -257,6 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				13B366F71FEC452A003B1AF0 /* UIView.swift */,
+				13F620AF1FF411F20090A0DA /* UIImage.swift */,
 			);
 			path = "View Extensions";
 			sourceTree = "<group>";
@@ -390,6 +393,7 @@
 				13EA48211FE9A9B6002D66C8 /* NotificationManager.swift in Sources */,
 				133BE7A81FE841E300FA3767 /* SessionManager.swift in Sources */,
 				13B366F81FEC452A003B1AF0 /* UIView.swift in Sources */,
+				13F620B01FF411F20090A0DA /* UIImage.swift in Sources */,
 				133BE7A01FE825E200FA3767 /* HealthManager.swift in Sources */,
 				135AC6CE1FEB123100F8D3C8 /* SettingsViewController.swift in Sources */,
 			);
