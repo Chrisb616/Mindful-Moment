@@ -49,10 +49,9 @@
                         <action selector="backButtonTouchUpInside:" destination="-1" eventType="touchUpInside" id="FFV-IJ-Kfh"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xRh-3v-rvp">
-                    <rect key="frame" x="125" y="380" width="124" height="58"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" name="AvenirNext-Heavy" family="Avenir Next" pointSize="31"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xRh-3v-rvp">
+                    <rect key="frame" x="124" y="60" width="127.5" height="55"/>
+                    <fontDescription key="fontDescription" name="AvenirNext-Heavy" family="Avenir Next" pointSize="40"/>
                     <color key="textColor" red="0.42310473320000003" green="0.32865700129999997" blue="0.49806475639999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -62,7 +61,9 @@
                 <constraint firstItem="ihe-Rb-zP9" firstAttribute="top" secondItem="oFN-Nh-DYT" secondAttribute="bottom" constant="8" id="2Pc-th-Keg"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ihe-Rb-zP9" secondAttribute="bottom" constant="20" id="7ug-cH-eXm"/>
                 <constraint firstItem="oFN-Nh-DYT" firstAttribute="leading" secondItem="ihe-Rb-zP9" secondAttribute="leading" id="9lg-ec-nfH"/>
+                <constraint firstItem="xRh-3v-rvp" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="FGf-6K-1nC"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ihe-Rb-zP9" secondAttribute="trailing" constant="20" id="drN-mn-d9o"/>
+                <constraint firstItem="xRh-3v-rvp" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="40" id="ekn-AN-Zhz"/>
                 <constraint firstItem="oFN-Nh-DYT" firstAttribute="trailing" secondItem="ihe-Rb-zP9" secondAttribute="trailing" id="kEI-b9-Pzx"/>
                 <constraint firstItem="oFN-Nh-DYT" firstAttribute="height" secondItem="ihe-Rb-zP9" secondAttribute="height" id="ux3-Hj-8QX"/>
                 <constraint firstItem="ihe-Rb-zP9" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="yXt-Oi-hqx"/>

@@ -10,6 +10,10 @@ import UIKit
 
 class AppInfoViewController: UIViewController {
     
+    @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var versionLabel: UILabel!
+    
+    
     @IBOutlet weak var backButton: UIButton!
     
     static var instanceFromNib: AppInfoViewController {
@@ -29,6 +33,12 @@ class AppInfoViewController: UIViewController {
     
     //MARK: - Format
     func formatFromNib() {
+        contentView.standardFormat()
+        
+        if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] {
+            versionLabel.text = "Mindful Moment v\(version)"
+        }
+        
         backButton.standardFormat()
     }
     
