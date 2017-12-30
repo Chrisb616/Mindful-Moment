@@ -38,7 +38,20 @@ class TimerViewController: UIViewController {
         backButton.standardFormat()
     }
     
+    //MARK: - Interaction
+    func showElements() {
+        
+    }
+    
+    func hideElements() {
+        
+    }
+    
     //MARK: - Actions
+    @IBAction func beginMeditationTouchUpInside(_ sender: Any) {
+        
+    }
+    
     @IBAction func backButtonTouchUpInside(_ sender: Any) {
         dismiss(animated: true) {
             NotificationManager.instance.postShowMenuViewControllerNotification()

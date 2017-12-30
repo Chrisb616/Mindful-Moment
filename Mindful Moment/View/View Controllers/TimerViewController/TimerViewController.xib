@@ -34,6 +34,9 @@
                     <state key="normal" title="Begin Meditation">
                         <color key="titleColor" red="0.42310473320000003" green="0.32865700129999997" blue="0.49806475639999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </state>
+                    <connections>
+                        <action selector="beginMeditationTouchUpInside:" destination="-1" eventType="touchUpInside" id="ECQ-L0-M6e"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ihe-Rb-zP9">
                     <rect key="frame" x="20" y="587" width="335" height="60"/>
