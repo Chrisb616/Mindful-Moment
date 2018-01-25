@@ -10,27 +10,36 @@ import Foundation
 
 class MeditationTimer {
     
-    static var current: MeditationTimer?
+    //MARK: - Instance
+    static let instance: MeditationTimer = MeditationTimer()
     
-    let start: Date
+    //MARK: - Stored Properties
+    private var start: Date?
     
-    var end: Date?
-    
-    init() {
-        self.start = Date()
+    private init() {
+        
     }
     
-    func finish() {
-        self.end = Date()
+    func begin() {
+        start = Date()
     }
     
-    var session: Session? {
-        if let end = end {
-            return Session(startDate: start, endDate: end)
-        } else {
-            print("Cannot create session because the timer has no end point")
-            return nil
+    var currentDuration: TimeInterval? {
+        if let start = start {
+            return Date().timeIntervalSince(start)
         }
+        return nil
+    }
+    
+    func finish() -> Session? {
+        if let start = start {
+            let session = Session(startDate: start, endDate: Date())
+            
+            self.start = nil
+            
+            return session
+        }
+        return nil
     }
     
 }

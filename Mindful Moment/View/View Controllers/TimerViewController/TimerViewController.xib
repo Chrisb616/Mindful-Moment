@@ -19,6 +19,7 @@
             <connections>
                 <outlet property="backButton" destination="ihe-Rb-zP9" id="0cW-Kc-F7y"/>
                 <outlet property="beginMeditationButton" destination="oFN-Nh-DYT" id="0Os-rb-n7W"/>
+                <outlet property="timeDuration" destination="xRh-3v-rvp" id="mXt-NM-LqH"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

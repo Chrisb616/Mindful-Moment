@@ -11,8 +11,12 @@ import UIKit
 class TimerViewController: UIViewController {
     
     //MARK: - Outlets
+    @IBOutlet weak var timeDuration: UILabel!
     @IBOutlet weak var beginMeditationButton: UIButton!
     @IBOutlet weak var backButton: UIButton!
+    
+    //MARK: - References
+    var meditationTimer: MeditationTimer { return MeditationTimer.instance }
     
     //MARK: - Initialization
     static var instanceFromNib: TimerViewController {
@@ -38,18 +42,23 @@ class TimerViewController: UIViewController {
         backButton.standardFormat()
     }
     
-    //MARK: - Interaction
-    func showElements() {
+    //MARK: - Timer
+    func beginTimer() {
         
+        meditationTimer.begin()
+        
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { (timer) in
+            self.updateTimeDurationLabel()
+        }
     }
     
-    func hideElements() {
-        
+    func updateTimeDurationLabel() {
+        self.timeDuration.text = meditationTimer.currentDuration?.timeCodeFormat
     }
     
     //MARK: - Actions
     @IBAction func beginMeditationTouchUpInside(_ sender: Any) {
-        
+        beginTimer()
     }
     
     @IBAction func backButtonTouchUpInside(_ sender: Any) {
