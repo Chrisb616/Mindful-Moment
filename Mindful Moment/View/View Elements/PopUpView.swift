@@ -10,6 +10,8 @@ import UIKit
 
 class PopUpView: UIView {
     
+    
+    //MARK: - Outlets
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var bodyTextView: UITextView!
     
@@ -17,9 +19,15 @@ class PopUpView: UIView {
     @IBOutlet weak var centerButton: UIButton!
     @IBOutlet weak var rightButton: UIButton!
     
+    //MARK: - Other View Elements
+    weak var viewPresentedOn: UIView?
+    
     static func present(onView superview: UIView, withTitle title: String, body: String) -> PopUpView {
         let nib = UINib(nibName: "PopUpView", bundle: Bundle.main)
         let view = nib.instantiate(withOwner: self, options: nil).first as! PopUpView
+        
+        view.viewPresentedOn = superview
+        superview.fadeAndDisable()
         
         superview.addSubview(view)
         
@@ -35,6 +43,10 @@ class PopUpView: UIView {
         view.bodyTextView.text = body
         
         return view
+    }
+    
+    deinit {
+        viewPresentedOn?.removeFadeAndReenable()
     }
     
     private func formatFromNib() {

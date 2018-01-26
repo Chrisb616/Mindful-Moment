@@ -58,6 +58,8 @@ class TimerViewController: UIViewController {
     
     @objc func closePopUp() {
         completionPopUp.center = CGPoint(x: view.center.x, y: view.center.y + view.frame.height)
+        completionPopUp.removeFromSuperview()
+        completionPopUp = nil
     }
     
     //MARK: - Timer

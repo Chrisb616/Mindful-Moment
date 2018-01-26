@@ -19,4 +19,21 @@ extension UIView {
         self.layer.shadowOffset = CGSize(width: -5, height: 5)
     }
     
+    func fadeAndDisable() {
+        let greyView = UIView()
+        self.addSubview(greyView)
+        greyView.frame = self.frame
+        greyView.backgroundColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.5)
+        greyView.accessibilityIdentifier = "Background Disabled"
+    }
+    
+    func removeFadeAndReenable() {
+        for view in self.subviews {
+            if view.accessibilityIdentifier == "Background Disabled"
+            {
+                view.removeFromSuperview()
+            }
+        }
+    }
+    
 }
