@@ -29,8 +29,7 @@ extension UIView {
     
     func removeFadeAndReenable() {
         for view in self.subviews {
-            if view.accessibilityIdentifier == "Background Disabled"
-            {
+            if view.accessibilityIdentifier == "Background Disabled" {
                 view.removeFromSuperview()
             }
         }
