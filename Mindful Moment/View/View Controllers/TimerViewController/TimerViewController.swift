@@ -15,6 +15,9 @@ class TimerViewController: UIViewController {
     @IBOutlet weak var beginMeditationButton: UIButton!
     @IBOutlet weak var backButton: UIButton!
     
+    //MARK - View Properties
+    var completionPopUp: PopUpView!
+    
     //MARK: - Properties
     var timerIsActive: Bool = false;
     var uiUpdateTimer: Timer?
@@ -40,18 +43,21 @@ class TimerViewController: UIViewController {
         print("Memory warning in TimerViewController")
     }
     
-    //MARK: - View Functions
+    //MARK: - Format
     func formatFromNib() {
         beginMeditationButton.standardFormat()
         backButton.standardFormat()
     }
     
-    func loadTimerCompletionView() {
-        let completionView = PopUpView.instanceFromNib
-        
-        view.addSubview(completionView)
-        completionView.frame = CGRect(x: 0, y: 0, width: view.frame.width * 0.75, height: view.frame.width * 0.75)
-        completionView.center = view.center
+    //MARK: - Completion Pop Up
+    
+    func setUpCompletionPopUp() {
+        completionPopUp = PopUpView.present(onView: view, withTitle: "Meditation Complete", body: "Would you like to save this meditation as Mindful Minutes in Health?")
+        completionPopUp.formatLeftButton(text: "Don't Save", selector: #selector(closePopUp))
+    }
+    
+    @objc func closePopUp() {
+        completionPopUp.center = CGPoint(x: view.center.x, y: view.center.y + view.frame.height)
     }
     
     //MARK: - Timer
@@ -79,7 +85,7 @@ class TimerViewController: UIViewController {
         beginMeditationButton.setTitle("Begin Meditation", for: .normal)
         backButton.isHidden = false
         
-        loadTimerCompletionView()
+        setUpCompletionPopUp()
     }
     
     func updateTimeDurationLabel() {
