@@ -15,6 +15,10 @@ class TimerViewController: UIViewController {
     @IBOutlet weak var beginMeditationButton: UIButton!
     @IBOutlet weak var backButton: UIButton!
     
+    //MARK: - Properties
+    var timerIsActive: Bool = false;
+    var uiUpdateTimer: Timer?
+    
     //MARK: - References
     var meditationTimer: MeditationTimer { return MeditationTimer.instance }
     
@@ -36,10 +40,18 @@ class TimerViewController: UIViewController {
         print("Memory warning in TimerViewController")
     }
     
-    //MARK: - Format
+    //MARK: - View Functions
     func formatFromNib() {
         beginMeditationButton.standardFormat()
         backButton.standardFormat()
+    }
+    
+    func loadTimerCompletionView() {
+        let completionView = PopUpView.instanceFromNib
+        
+        view.addSubview(completionView)
+        completionView.frame = CGRect(x: 0, y: 0, width: view.frame.width * 0.75, height: view.frame.width * 0.75)
+        completionView.center = view.center
     }
     
     //MARK: - Timer
@@ -47,9 +59,27 @@ class TimerViewController: UIViewController {
         
         meditationTimer.begin()
         
-        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { (timer) in
+        timerIsActive = true
+        
+        beginMeditationButton.setTitle("End Meditation", for: .normal)
+        backButton.isHidden = true
+        
+        uiUpdateTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { (timer) in
             self.updateTimeDurationLabel()
         }
+    }
+    
+    func endTimer() {
+        
+        timerIsActive = false
+        
+        uiUpdateTimer?.invalidate()
+        uiUpdateTimer = nil
+        
+        beginMeditationButton.setTitle("Begin Meditation", for: .normal)
+        backButton.isHidden = false
+        
+        loadTimerCompletionView()
     }
     
     func updateTimeDurationLabel() {
@@ -58,7 +88,11 @@ class TimerViewController: UIViewController {
     
     //MARK: - Actions
     @IBAction func beginMeditationTouchUpInside(_ sender: Any) {
-        beginTimer()
+        if timerIsActive {
+            endTimer()
+        } else {
+            beginTimer()
+        }
     }
     
     @IBAction func backButtonTouchUpInside(_ sender: Any) {
@@ -66,4 +100,5 @@ class TimerViewController: UIViewController {
             NotificationManager.instance.postShowMenuViewControllerNotification()
         }
     }
+
 }

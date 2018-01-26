@@ -36,6 +36,8 @@
 		13EA48241FEADCCA002D66C8 /* BackgroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EA48221FEADCCA002D66C8 /* BackgroundViewController.swift */; };
 		13EA48251FEADCCA002D66C8 /* BackgroundViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13EA48231FEADCCA002D66C8 /* BackgroundViewController.xib */; };
 		13EA48291FEAE560002D66C8 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EA48281FEAE560002D66C8 /* Colors.swift */; };
+		13EE0880201B9FC2006FF684 /* PopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EE087F201B9FC2006FF684 /* PopUpView.swift */; };
+		13EE0882201BA30F006FF684 /* PopUpView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13EE0881201BA30F006FF684 /* PopUpView.xib */; };
 		13F620B01FF411F20090A0DA /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F620AF1FF411F20090A0DA /* UIImage.swift */; };
 /* End PBXBuildFile section */
 
@@ -84,6 +86,8 @@
 		13EA48221FEADCCA002D66C8 /* BackgroundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundViewController.swift; sourceTree = "<group>"; };
 		13EA48231FEADCCA002D66C8 /* BackgroundViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BackgroundViewController.xib; sourceTree = "<group>"; };
 		13EA48281FEAE560002D66C8 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		13EE087F201B9FC2006FF684 /* PopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpView.swift; sourceTree = "<group>"; };
+		13EE0881201BA30F006FF684 /* PopUpView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopUpView.xib; sourceTree = "<group>"; };
 		13F620AF1FF411F20090A0DA /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -106,6 +110,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1303C823201BAAC1009AF2A9 /* View Elements */ = {
+			isa = PBXGroup;
+			children = (
+				13EE087F201B9FC2006FF684 /* PopUpView.swift */,
+				13EE0881201BA30F006FF684 /* PopUpView.xib */,
+			);
+			path = "View Elements";
+			sourceTree = "<group>";
+		};
 		13107B111FEDE1CC0026BB8E /* Model Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -213,6 +226,7 @@
 		133BE7941FE8221300FA3767 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1303C823201BAAC1009AF2A9 /* View Elements */,
 				13B366F61FEC4518003B1AF0 /* View Extensions */,
 				133BE79D1FE824F300FA3767 /* View Controllers */,
 				133BE7711FE821A400FA3767 /* AppDelegate.swift */,
@@ -361,6 +375,7 @@
 				133BE77F1FE821A400FA3767 /* LaunchScreen.storyboard in Resources */,
 				133BE79C1FE822A600FA3767 /* MenuViewController.xib in Resources */,
 				135AC6C51FEB03F000F8D3C8 /* TimerViewController.xib in Resources */,
+				13EE0882201BA30F006FF684 /* PopUpView.xib in Resources */,
 				135AC6CF1FEB123100F8D3C8 /* SettingsViewController.xib in Resources */,
 				135AC6D31FEB144100F8D3C8 /* AppInfoViewController.xib in Resources */,
 				133BE77C1FE821A400FA3767 /* Assets.xcassets in Resources */,
@@ -399,6 +414,7 @@
 				13B366F81FEC452A003B1AF0 /* UIView.swift in Sources */,
 				13F620B01FF411F20090A0DA /* UIImage.swift in Sources */,
 				133BE7A01FE825E200FA3767 /* HealthManager.swift in Sources */,
+				13EE0880201B9FC2006FF684 /* PopUpView.swift in Sources */,
 				135AC6CE1FEB123100F8D3C8 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
