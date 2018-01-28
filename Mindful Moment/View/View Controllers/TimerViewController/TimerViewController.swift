@@ -50,7 +50,6 @@ class TimerViewController: UIViewController {
     }
     
     //MARK: - Completion Pop Up
-    
     func setUpCompletionPopUp() {
         completionPopUp = PopUpView.present(onView: view, withTitle: "Meditation Complete", body: "Would you like to save this meditation as Mindful Minutes in Health?")
         completionPopUp.formatLeftButton(text: "Don't Save", selector: #selector(closePopUp))
@@ -73,7 +72,6 @@ class TimerViewController: UIViewController {
     
     //MARK: - Timer
     func beginTimer() {
-        
         meditationTimer.begin()
         
         timerIsActive = true
@@ -86,8 +84,7 @@ class TimerViewController: UIViewController {
         }
     }
     
-    func endTimer() {
-        
+    func finishTimer() {
         meditationTimer.finish()
         
         timerIsActive = false
@@ -105,10 +102,10 @@ class TimerViewController: UIViewController {
         self.timeDuration.text = meditationTimer.currentDuration?.timeCodeFormat
     }
     
-    //MARK: - Actions
+    //MARK: - IB Actions
     @IBAction func beginMeditationTouchUpInside(_ sender: Any) {
         if timerIsActive {
-            endTimer()
+            finishTimer()
         } else {
             beginTimer()
         }
@@ -116,6 +113,7 @@ class TimerViewController: UIViewController {
     
     @IBAction func backButtonTouchUpInside(_ sender: Any) {
         dismiss(animated: true) {
+            NotificationManager.instance.postDidDismissTimerViewControllerNotification()
             NotificationManager.instance.postShowMenuViewControllerNotification()
         }
     }

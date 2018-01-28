@@ -26,10 +26,14 @@ class MeditationTimer {
     }
     
     var currentDuration: TimeInterval? {
-        if let start = start {
+        guard let start = start else { return nil }
+        
+        if let end = end {
+            return end.timeIntervalSince(start)
+        } else {
             return Date().timeIntervalSince(start)
         }
-        return nil
+        
     }
     
     func finish() {

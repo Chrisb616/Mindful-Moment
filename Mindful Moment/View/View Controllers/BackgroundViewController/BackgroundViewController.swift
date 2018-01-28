@@ -90,18 +90,14 @@ class BackgroundViewController: UIViewController {
         notificationManager.setShowSessionsViewControllerObserver(observer: self, selector: #selector(presentSessionsViewController))
         notificationManager.setShowSettingsViewControllerObserver(observer: self, selector: #selector(presentSettingsViewController))
         notificationManager.setShowAppInfoViewControllerObserver(observer: self, selector: #selector(presentAppInfoViewController))
+        
+        notificationManager.setDidDismissTimerViewControllerObserver(observer: self, selector: #selector(didDismissTimerViewController))
     }
     
     @objc func presentMenuViewController() {
         let menu = MenuViewController.instanceFromNib
         menu.modalPresentationStyle = .overCurrentContext
         present(menu, animated: true, completion: nil)
-    }
-    
-    @objc func presentTimerViewController() {
-        let timer = TimerViewController.instanceFromNib
-        timer.modalPresentationStyle = .overCurrentContext
-        present(timer, animated: true, completion: nil)
     }
     
     @objc func presentSessionsViewController() {
@@ -119,5 +115,30 @@ class BackgroundViewController: UIViewController {
         let appInfo = AppInfoViewController.instanceFromNib
         appInfo.modalPresentationStyle = .overCurrentContext
         present(appInfo, animated: true, completion: nil)
+    }
+    
+    @objc func presentTimerViewController() {
+        let timer = TimerViewController.instanceFromNib
+        timer.modalPresentationStyle = .overCurrentContext
+        present(timer, animated: true, completion: nil)
+        loadTimerViewAnimation()
+    }
+    
+    @objc func didDismissTimerViewController() {
+        closeTimerViewAnimation()
+    }
+    
+    //MARK: - Animations
+    
+    func loadTimerViewAnimation() {
+        centerMountainView.animatePosition(changeX: 0, changeY: 100, withDuration: 4, easeIn: false, easeOut: true)
+        leftMountainView.animatePosition(changeX: -10, changeY: 100, withDuration: 4, easeIn: false, easeOut: true)
+        rightMountainView.animatePosition(changeX: 10, changeY: 100, withDuration: 4, easeIn: false, easeOut: true)
+    }
+    
+    func closeTimerViewAnimation() {
+        centerMountainView.animatePosition(changeX: 0, changeY: -100, withDuration: 3, easeIn: false, easeOut: true)
+        leftMountainView.animatePosition(changeX: 10, changeY: -100, withDuration: 3, easeIn: false, easeOut: true)
+        rightMountainView.animatePosition(changeX: -10, changeY: -100, withDuration: 3, easeIn: false, easeOut: true)
     }
 }

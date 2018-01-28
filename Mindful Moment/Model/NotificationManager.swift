@@ -25,6 +25,8 @@ class NotificationManager {
     private var showSettingsViewControllerName = Notification.Name("ShowSettings")
     private var showAppInfoViewControllerName = Notification.Name("ShowAppInfo")
     
+    private var didDismissTimerViewControllerName = Notification.Name("TimerDismissed")
+    
     //MARK: - Add Observers
     func setStartTimerObserver(observer: Any, selector: Selector) {
         notificationCenter.addObserver(observer, selector: selector, name: startTimerName, object: nil)
@@ -54,6 +56,10 @@ class NotificationManager {
         notificationCenter.addObserver(observer, selector: selector, name: showAppInfoViewControllerName, object: nil)
     }
     
+    func setDidDismissTimerViewControllerObserver(observer: Any, selector: Selector) {
+        notificationCenter.addObserver(observer, selector: selector, name: didDismissTimerViewControllerName, object: nil)
+    }
+    
     //MARK: - Post Notification
     func postStartTimerNotification() {
         notificationCenter.post(name: startTimerName, object: nil)
@@ -81,6 +87,10 @@ class NotificationManager {
     
     func postShowAppInfoViewControllerNotification() {
         notificationCenter.post(name: showAppInfoViewControllerName, object: nil)
+    }
+    
+    func postDidDismissTimerViewControllerNotification() {
+        notificationCenter.post(name: didDismissTimerViewControllerName, object: nil)
     }
 
 }

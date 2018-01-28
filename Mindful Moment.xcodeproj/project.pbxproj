@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		13107B131FEDE1E00026BB8E /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13107B121FEDE1E00026BB8E /* Date.swift */; };
 		13107B151FEDE2740026BB8E /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13107B141FEDE2740026BB8E /* Double.swift */; };
+		131C1390201E4F1800DFD712 /* AnimationKeypaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131C138F201E4F1800DFD712 /* AnimationKeypaths.swift */; };
 		133BE7721FE821A400FA3767 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133BE7711FE821A400FA3767 /* AppDelegate.swift */; };
 		133BE77C1FE821A400FA3767 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 133BE77B1FE821A400FA3767 /* Assets.xcassets */; };
 		133BE77F1FE821A400FA3767 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 133BE77D1FE821A400FA3767 /* LaunchScreen.storyboard */; };
@@ -54,6 +55,7 @@
 /* Begin PBXFileReference section */
 		13107B121FEDE1E00026BB8E /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		13107B141FEDE2740026BB8E /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
+		131C138F201E4F1800DFD712 /* AnimationKeypaths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationKeypaths.swift; sourceTree = "<group>"; };
 		133BE76E1FE821A400FA3767 /* Mindful Moment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mindful Moment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		133BE7711FE821A400FA3767 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		133BE77B1FE821A400FA3767 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -126,6 +128,14 @@
 				13107B141FEDE2740026BB8E /* Double.swift */,
 			);
 			path = "Model Extensions";
+			sourceTree = "<group>";
+		};
+		131C138E201E4EE200DFD712 /* Toolbox */ = {
+			isa = PBXGroup;
+			children = (
+				131C138F201E4F1800DFD712 /* AnimationKeypaths.swift */,
+			);
+			path = Toolbox;
 			sourceTree = "<group>";
 		};
 		133377B21FEC420E0056E127 /* BackgroundViewController */ = {
@@ -229,6 +239,7 @@
 				1303C823201BAAC1009AF2A9 /* View Elements */,
 				13B366F61FEC4518003B1AF0 /* View Extensions */,
 				133BE79D1FE824F300FA3767 /* View Controllers */,
+				131C138E201E4EE200DFD712 /* Toolbox */,
 				133BE7711FE821A400FA3767 /* AppDelegate.swift */,
 				133BE77B1FE821A400FA3767 /* Assets.xcassets */,
 				133BE77D1FE821A400FA3767 /* LaunchScreen.storyboard */,
@@ -411,6 +422,7 @@
 				133BE7AA1FE864BE00FA3767 /* MeditationTimer.swift in Sources */,
 				13EA48211FE9A9B6002D66C8 /* NotificationManager.swift in Sources */,
 				133BE7A81FE841E300FA3767 /* SessionManager.swift in Sources */,
+				131C1390201E4F1800DFD712 /* AnimationKeypaths.swift in Sources */,
 				13B366F81FEC452A003B1AF0 /* UIView.swift in Sources */,
 				13F620B01FF411F20090A0DA /* UIImage.swift in Sources */,
 				133BE7A01FE825E200FA3767 /* HealthManager.swift in Sources */,
