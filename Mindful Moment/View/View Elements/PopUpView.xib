@@ -54,7 +54,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VRN-yt-gg6">
                     <rect key="frame" x="16" y="62" width="328" height="238"/>
                     <subviews>
-                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Pop Up Message" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="bR0-Uf-sfi">
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Pop Up Message" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bR0-Uf-sfi">
                             <rect key="frame" x="10" y="20" width="308" height="208"/>
                             <color key="textColor" red="0.42352941179999998" green="0.32549019610000002" blue="0.49803921569999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>

@@ -40,8 +40,8 @@ struct HealthManager {
         }
     }
     
-    func saveSessionToMindfulMinutes(start: Date, end: Date) {
-        let mindfulSample = HKCategorySample(type: mindfulType, value: 0, start: start, end: end)
+    func saveSessionToMindfulMinutes(session: Session) {
+        let mindfulSample = HKCategorySample(type: mindfulType, value: 0, start: session.startDate, end: session.endDate)
         healthStore.save(mindfulSample) { success, error in
             if(error != nil) {
                 print(error.debugDescription)

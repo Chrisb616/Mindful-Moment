@@ -21,16 +21,27 @@ extension UIView {
     
     func fadeAndDisable() {
         let greyView = UIView()
+        greyView.alpha = 0
         self.addSubview(greyView)
         greyView.frame = self.frame
         greyView.backgroundColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.5)
         greyView.accessibilityIdentifier = "Background Disabled"
+        
+        UIView.animate(withDuration: 0.5) {
+            greyView.alpha = 1
+        }
     }
     
     func removeFadeAndReenable() {
         for view in self.subviews {
             if view.accessibilityIdentifier == "Background Disabled" {
-                view.removeFromSuperview()
+                
+                UIView.animate(withDuration: 0.5, animations: {
+                    view.alpha = 0
+                }, completion: { (success) in
+                    view.removeFromSuperview()
+                })
+                
             }
         }
     }

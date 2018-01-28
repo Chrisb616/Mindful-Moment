@@ -54,12 +54,21 @@ class TimerViewController: UIViewController {
     func setUpCompletionPopUp() {
         completionPopUp = PopUpView.present(onView: view, withTitle: "Meditation Complete", body: "Would you like to save this meditation as Mindful Minutes in Health?")
         completionPopUp.formatLeftButton(text: "Don't Save", selector: #selector(closePopUp))
+        completionPopUp.formatRightButton(text: "Save", selector: #selector(saveSession))
     }
     
     @objc func closePopUp() {
         completionPopUp.center = CGPoint(x: view.center.x, y: view.center.y + view.frame.height)
         completionPopUp.removeFromSuperview()
         completionPopUp = nil
+    }
+    
+    @objc func saveSession() {
+        guard let session = meditationTimer.session else { return }
+        
+        HealthManager.instance.saveSessionToMindfulMinutes(session: session)
+        
+        closePopUp()
     }
     
     //MARK: - Timer
@@ -78,6 +87,8 @@ class TimerViewController: UIViewController {
     }
     
     func endTimer() {
+        
+        meditationTimer.finish()
         
         timerIsActive = false
         

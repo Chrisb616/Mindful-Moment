@@ -10,11 +10,12 @@ import Foundation
 
 struct Session {
     var startDate: Date
-    var duration: TimeInterval
+    var endDate: Date
+    var duration: TimeInterval { return endDate.timeIntervalSince(startDate)}
 
     init(startDate: Date, endDate: Date) {
         self.startDate = startDate
-        self.duration = endDate.timeIntervalSince(startDate)
+        self.endDate = endDate
     }
 }
 

@@ -15,6 +15,7 @@ class MeditationTimer {
     
     //MARK: - Stored Properties
     private var start: Date?
+    private var end: Date?
     
     private init() {
         
@@ -31,11 +32,14 @@ class MeditationTimer {
         return nil
     }
     
-    func finish() -> Session? {
-        if let start = start {
-            let session = Session(startDate: start, endDate: Date())
-            
-            self.start = nil
+    func finish() {
+        end = Date()
+    }
+    
+    var session: Session? {
+        
+        if let start = start, let end = end {
+            let session = Session(startDate: start, endDate: end)
             
             return session
         }
