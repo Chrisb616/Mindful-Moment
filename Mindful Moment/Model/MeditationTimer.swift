@@ -45,6 +45,9 @@ class MeditationTimer {
         if let start = start, let end = end {
             let session = Session(startDate: start, endDate: end)
             
+            self.start = nil
+            self.end = nil
+            
             return session
         }
         return nil
