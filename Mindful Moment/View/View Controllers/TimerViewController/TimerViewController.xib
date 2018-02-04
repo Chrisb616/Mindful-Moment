@@ -46,7 +46,7 @@
                         <constraint firstAttribute="height" constant="60" id="BDZ-rb-7WJ"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="AvenirNext-Heavy" family="Avenir Next" pointSize="20"/>
-                    <state key="normal" title="Back">
+                    <state key="normal" title="Return to Menu">
                         <color key="titleColor" red="0.42310473322868347" green="0.32865700125694275" blue="0.49806475639343262" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </state>
                     <connections>

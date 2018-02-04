@@ -46,7 +46,7 @@
                         <constraint firstAttribute="height" constant="60" id="6Up-ea-5uT"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="20"/>
-                    <state key="normal" title="Back">
+                    <state key="normal" title="Return to Menu">
                         <color key="titleColor" red="0.42306166887283325" green="0.32458174228668213" blue="0.49806517362594604" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </state>
                     <connections>

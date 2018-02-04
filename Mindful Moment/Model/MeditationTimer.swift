@@ -41,7 +41,6 @@ class MeditationTimer {
     }
     
     var session: Session? {
-        
         if let start = start, let end = end {
             let session = Session(startDate: start, endDate: end)
             
