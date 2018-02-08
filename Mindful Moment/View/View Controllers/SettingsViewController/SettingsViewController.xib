@@ -30,19 +30,19 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1id-W0-nb3">
                     <rect key="frame" x="20" y="40" width="335" height="41"/>
                     <fontDescription key="fontDescription" name="AvenirNext-Heavy" family="Avenir Next" pointSize="30"/>
-                    <color key="textColor" red="0.56470588239999997" green="0.37647058820000001" blue="0.47058823529999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <color key="textColor" red="0.42352941179999998" green="0.32549019610000002" blue="0.49803921569999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="86O-J9-6oi">
                     <rect key="frame" x="20" y="587" width="335" height="60"/>
-                    <color key="backgroundColor" red="0.28331819180000001" green="0.28418636320000001" blue="0.37647058820000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <color key="backgroundColor" red="0.75294117650000003" green="0.84705882349999995" blue="0.75294117650000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="60" id="HDx-QW-Asy"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="20"/>
                     <color key="tintColor" red="0.42306166887283325" green="0.32458174228668213" blue="0.49806517362594604" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <state key="normal" title="Return to Menu">
-                        <color key="titleColor" red="0.56470588239999997" green="0.37647058820000001" blue="0.47058823529999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="titleColor" red="0.42352941179999998" green="0.32549019610000002" blue="0.49803921569999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </state>
                     <connections>
                         <action selector="backButtonTouchUpInside:" destination="-1" eventType="touchUpInside" id="WCk-k6-qRN"/>

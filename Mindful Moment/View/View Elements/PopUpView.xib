@@ -31,7 +31,7 @@
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AZP-7x-HnF">
                     <rect key="frame" x="22" y="320" width="68" height="20"/>
-                    <color key="backgroundColor" red="0.57387429479999996" green="0.79020917420000003" blue="0.68625622990000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <color key="backgroundColor" red="0.75294117650000003" green="0.84705882349999995" blue="0.75294117650000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="qm8-as-srA"/>
                     </constraints>
@@ -42,7 +42,7 @@
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tlG-HM-wbb">
                     <rect key="frame" x="267" y="320" width="71" height="20"/>
-                    <color key="backgroundColor" red="0.57387429479999996" green="0.79020917420000003" blue="0.68625622990000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <color key="backgroundColor" red="0.75294117650000003" green="0.84705882349999995" blue="0.75294117650000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="yoz-Ck-kca"/>
                     </constraints>
@@ -61,7 +61,7 @@
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
                     </subviews>
-                    <color key="backgroundColor" red="0.83091092109999998" green="0.85730928179999999" blue="0.72937244180000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="bR0-Uf-sfi" secondAttribute="bottom" constant="10" id="JYT-Dw-eK0"/>
                         <constraint firstItem="bR0-Uf-sfi" firstAttribute="leading" secondItem="VRN-yt-gg6" secondAttribute="leading" constant="10" id="UAN-sS-v5l"/>
@@ -71,7 +71,7 @@
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ENH-BQ-VBC">
                     <rect key="frame" x="144" y="320" width="72" height="20"/>
-                    <color key="backgroundColor" red="0.57387429479999996" green="0.79020917420000003" blue="0.68625622990000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <color key="backgroundColor" red="0.75294117650000003" green="0.84705882349999995" blue="0.75294117650000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="jRR-8k-arE"/>
                     </constraints>
@@ -81,7 +81,7 @@
                     </state>
                 </button>
             </subviews>
-            <color key="backgroundColor" red="0.57387429479999996" green="0.79020917420000003" blue="0.68625622990000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color key="backgroundColor" red="0.75294117650000003" green="0.84705882349999995" blue="0.75294117650000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
                 <constraint firstItem="ENH-BQ-VBC" firstAttribute="bottom" secondItem="AZP-7x-HnF" secondAttribute="bottom" id="5Bj-HY-0c5"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="8W2-Mb-2hw" secondAttribute="trailing" constant="10" id="9QU-hf-51s"/>

@@ -30,10 +30,10 @@
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oFN-Nh-DYT">
                     <rect key="frame" x="20" y="519" width="335" height="60"/>
-                    <color key="backgroundColor" red="0.28331819180000001" green="0.28418636320000001" blue="0.37647058820000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <color key="backgroundColor" red="0.75294117650000003" green="0.84705882349999995" blue="0.75294117650000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <fontDescription key="fontDescription" name="AvenirNext-Heavy" family="Avenir Next" pointSize="20"/>
                     <state key="normal" title="Begin Meditation">
-                        <color key="titleColor" red="0.56470588239999997" green="0.37647058820000001" blue="0.47058823529999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="titleColor" red="0.42352941179999998" green="0.32549019610000002" blue="0.49803921569999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </state>
                     <connections>
                         <action selector="beginMeditationTouchUpInside:" destination="-1" eventType="touchUpInside" id="ECQ-L0-M6e"/>
@@ -41,13 +41,13 @@
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ihe-Rb-zP9">
                     <rect key="frame" x="20" y="587" width="335" height="60"/>
-                    <color key="backgroundColor" red="0.28331819180000001" green="0.28418636320000001" blue="0.37647058820000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <color key="backgroundColor" red="0.75294117650000003" green="0.84705882349999995" blue="0.75294117650000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="60" id="BDZ-rb-7WJ"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="AvenirNext-Heavy" family="Avenir Next" pointSize="20"/>
                     <state key="normal" title="Return to Menu">
-                        <color key="titleColor" red="0.56470588239999997" green="0.37647058820000001" blue="0.47058823529999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="titleColor" red="0.42352941179999998" green="0.32549019610000002" blue="0.49803921569999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </state>
                     <connections>
                         <action selector="backButtonTouchUpInside:" destination="-1" eventType="touchUpInside" id="FFV-IJ-Kfh"/>
@@ -56,7 +56,7 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xRh-3v-rvp">
                     <rect key="frame" x="124" y="60" width="127.5" height="55"/>
                     <fontDescription key="fontDescription" name="AvenirNext-Heavy" family="Avenir Next" pointSize="40"/>
-                    <color key="textColor" red="0.56470588239999997" green="0.37647058820000001" blue="0.47058823529999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <color key="textColor" red="0.42352941179999998" green="0.32549019610000002" blue="0.49803921569999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>

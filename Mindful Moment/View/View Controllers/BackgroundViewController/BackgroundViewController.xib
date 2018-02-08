@@ -19,7 +19,7 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" red="0.56470588235294117" green="0.6588235294117647" blue="0.6588235294117647" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color key="backgroundColor" red="0.75294117650000003" green="0.84705882349999995" blue="0.75294117650000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="35.5" y="53.5"/>
         </view>

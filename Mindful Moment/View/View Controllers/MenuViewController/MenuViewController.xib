@@ -33,18 +33,18 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mindful Moment" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="31" translatesAutoresizingMaskIntoConstraints="NO" id="eHO-vV-Xqt">
                     <rect key="frame" x="20" y="40" width="280" height="59"/>
                     <fontDescription key="fontDescription" name="AvenirNext-Heavy" family="Avenir Next" pointSize="43"/>
-                    <color key="textColor" red="0.56470588239999997" green="0.37647058820000001" blue="0.47058823529999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <color key="textColor" red="0.42352941176470588" green="0.32941176470588235" blue="0.49803921568627452" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oIK-Wa-M6C">
                     <rect key="frame" x="20" y="488" width="84.5" height="60"/>
-                    <color key="backgroundColor" red="0.56470588239999997" green="0.6588235294" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <color key="backgroundColor" red="0.75294117650000003" green="0.84705882349999995" blue="0.75294117650000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="60" id="vDh-PE-Mjq"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="AvenirNext-Heavy" family="Avenir Next" pointSize="14"/>
                     <state key="normal" title="Sessions">
-                        <color key="titleColor" red="0.56470588239999997" green="0.37647058820000001" blue="0.47058823529999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="titleColor" red="0.42310473320000003" green="0.32865700129999997" blue="0.49806475639999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </state>
                     <connections>
                         <action selector="sessionsButtonTouchUpInside:" destination="-1" eventType="touchUpInside" id="D1e-b7-Agt"/>
@@ -52,13 +52,13 @@
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7dQ-V5-VQu">
                     <rect key="frame" x="118" y="488" width="84.5" height="60"/>
-                    <color key="backgroundColor" red="0.56470588239999997" green="0.6588235294" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <color key="backgroundColor" red="0.75294117650000003" green="0.84705882349999995" blue="0.75294117650000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="60" id="Jf7-uA-Mdv"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="AvenirNext-Heavy" family="Avenir Next" pointSize="14"/>
                     <state key="normal" title="Settings">
-                        <color key="titleColor" red="0.56470588239999997" green="0.37647058820000001" blue="0.47058823529999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="titleColor" red="0.42310473320000003" green="0.32865700129999997" blue="0.49806475639999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </state>
                     <connections>
                         <action selector="settingsButtonTouchUpInside:" destination="-1" eventType="touchUpInside" id="8pY-W0-9Vg"/>
@@ -66,13 +66,13 @@
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IbA-xt-yWx">
                     <rect key="frame" x="215.5" y="488" width="84.5" height="60"/>
-                    <color key="backgroundColor" red="0.56470588239999997" green="0.6588235294" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <color key="backgroundColor" red="0.75294117650000003" green="0.84705882349999995" blue="0.75294117650000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="60" id="vYx-YQ-vgc"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="AvenirNext-Heavy" family="Avenir Next" pointSize="14"/>
                     <state key="normal" title="App Info">
-                        <color key="titleColor" red="0.56470588239999997" green="0.37647058820000001" blue="0.47058823529999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="titleColor" red="0.42310473320000003" green="0.32865700129999997" blue="0.49806475639999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </state>
                     <connections>
                         <action selector="appInfoButtonTouchUpInside:" destination="-1" eventType="touchUpInside" id="f9S-fs-lbw"/>
@@ -80,13 +80,13 @@
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sTZ-vs-21I">
                     <rect key="frame" x="20" y="419" width="280" height="60"/>
-                    <color key="backgroundColor" red="0.56470588239999997" green="0.6588235294" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <color key="backgroundColor" red="0.75294117650000003" green="0.84705882349999995" blue="0.75294117650000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="60" id="yP4-5c-ilX"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="AvenirNext-Heavy" family="Avenir Next" pointSize="30"/>
                     <state key="normal" title="Meditate">
-                        <color key="titleColor" red="0.56470588235294117" green="0.37647058823529411" blue="0.47058823529411764" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="titleColor" red="0.42310473320000003" green="0.32865700129999997" blue="0.49806475639999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </state>
                     <connections>
                         <action selector="meditateButtonTouchUpInside:" destination="-1" eventType="touchUpInside" id="trg-Mx-Cma"/>
