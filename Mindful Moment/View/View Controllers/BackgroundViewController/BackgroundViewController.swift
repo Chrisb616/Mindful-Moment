@@ -65,7 +65,7 @@ class BackgroundViewController: UIViewController {
         centerMountainView.contentMode = .scaleAspectFill
         leftMountainView.contentMode = .scaleToFill
         rightMountainView.contentMode = .scaleToFill
-        oceanView.backgroundColor = Colors.oceanBlue
+        oceanView.backgroundColor = Colors.midnightPurple
         
         // Add to Superview
         view.addSubview(oceanView)

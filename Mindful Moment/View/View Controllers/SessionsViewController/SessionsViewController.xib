@@ -30,31 +30,31 @@
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YBv-Qy-F8x">
                     <rect key="frame" x="5" y="95" width="404" height="541"/>
-                    <color key="backgroundColor" red="0.42310473320000003" green="0.32865700129999997" blue="0.49806475639999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <color key="backgroundColor" red="0.56470588239999997" green="0.37647058820000001" blue="0.47058823529999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <color key="sectionIndexColor" red="0.56987136602401733" green="0.78229457139968872" blue="0.68233555555343628" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
                 </tableView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mindful Minutes Sessions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="21" translatesAutoresizingMaskIntoConstraints="NO" id="Qdm-fI-mg0">
                     <rect key="frame" x="20" y="40" width="374" height="34.666666666666657"/>
                     <fontDescription key="fontDescription" name="AvenirNext-Heavy" family="Avenir Next" pointSize="25"/>
-                    <color key="textColor" red="0.42306166890000002" green="0.32458174229999998" blue="0.49806517360000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <color key="textColor" red="0.56470588239999997" green="0.37647058820000001" blue="0.47058823529999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="22t-VJ-kPH">
                     <rect key="frame" x="20" y="656" width="374" height="60"/>
-                    <color key="backgroundColor" red="0.57387429475784302" green="0.79020917415618896" blue="0.68625622987747192" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <color key="backgroundColor" red="0.28331819180000001" green="0.28418636320000001" blue="0.37647058820000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="60" id="6Up-ea-5uT"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="20"/>
                     <state key="normal" title="Return to Menu">
-                        <color key="titleColor" red="0.42306166887283325" green="0.32458174228668213" blue="0.49806517362594604" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="titleColor" red="0.56470588239999997" green="0.37647058820000001" blue="0.47058823529999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </state>
                     <connections>
                         <action selector="backButtonTouchUpInside:" destination="-1" eventType="touchUpInside" id="4GF-wN-x0G"/>
                     </connections>
                 </button>
             </subviews>
-            <color key="backgroundColor" red="0.57387429475784302" green="0.79020917415618896" blue="0.68625622987747192" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color key="backgroundColor" red="0.28331819180000001" green="0.28418636320000001" blue="0.37647058820000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
                 <constraint firstItem="YBv-Qy-F8x" firstAttribute="top" secondItem="Qdm-fI-mg0" secondAttribute="bottom" constant="20" id="349-2j-XEF"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="22t-VJ-kPH" secondAttribute="trailing" constant="20" id="Aun-rD-0NR"/>
