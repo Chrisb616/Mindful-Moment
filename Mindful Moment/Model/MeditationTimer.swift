@@ -23,6 +23,7 @@ class MeditationTimer {
     
     func begin() {
         start = Date()
+        end = nil
     }
     
     var currentDuration: TimeInterval? {
@@ -42,12 +43,7 @@ class MeditationTimer {
     
     var session: Session? {
         if let start = start, let end = end {
-            let session = Session(startDate: start, endDate: end)
-            
-            self.start = nil
-            self.end = nil
-            
-            return session
+            return Session(startDate: start, endDate: end)
         }
         return nil
     }
