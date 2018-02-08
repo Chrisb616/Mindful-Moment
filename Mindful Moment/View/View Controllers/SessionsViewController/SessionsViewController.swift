@@ -66,7 +66,6 @@ extension SessionsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: SessionsTableViewCell.identifier) as! SessionsTableViewCell
         let session = SessionManager.instance.storedSessions[indexPath.row]
         
@@ -74,7 +73,6 @@ extension SessionsViewController: UITableViewDataSource {
         
         return cell
     }
-
 }
 
 extension SessionsViewController: UITableViewDelegate {

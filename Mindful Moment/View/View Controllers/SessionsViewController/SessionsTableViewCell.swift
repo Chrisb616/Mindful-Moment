@@ -33,7 +33,6 @@ class SessionsTableViewCell: UITableViewCell {
         minutesLabel.text = session.duration.timeUnitFormat
         
         selectionStyle = .none
-        
     }
     
 }

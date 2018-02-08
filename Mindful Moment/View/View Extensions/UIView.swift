@@ -45,6 +45,23 @@ extension UIView {
     }
     
     //MARK: - Animations
+    
+    private func basicAnimationWith(keyPath: String, fromValue: Any?, toValue: Any?, duration: TimeInterval, easeIn: Bool, easeOut: Bool) -> CABasicAnimation {
+        let animation = CABasicAnimation(keyPath: keyPath)
+        animation.fromValue = fromValue
+        animation.toValue = toValue
+        animation.duration = duration
+        
+        if easeIn && easeOut {
+            animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        } else if easeIn {
+            animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn)
+        } else if easeOut {
+            animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+        }
+        
+        return animation
+    }
 
     func animatePosition(changeX: CGFloat, changeY: CGFloat, withDuration duration: TimeInterval, easeIn: Bool, easeOut: Bool) {
         let originalPosition = CGPoint(x: self.center.x, y: self.center.y)
@@ -77,21 +94,5 @@ extension UIView {
     }
      */
     
-    private func basicAnimationWith(keyPath: String, fromValue: Any?, toValue: Any?, duration: TimeInterval, easeIn: Bool, easeOut: Bool) -> CABasicAnimation {
-        let animation = CABasicAnimation(keyPath: keyPath)
-        animation.fromValue = fromValue
-        animation.toValue = toValue
-        animation.duration = duration
-        
-        if easeIn && easeOut {
-            animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-        } else if easeIn {
-            animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn)
-        } else if easeOut {
-            animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
-        }
-        
-        return animation
-    }
     
 }
